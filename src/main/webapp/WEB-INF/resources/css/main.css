@@ -1,0 +1,11 @@
+.entry:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+.glyphicon {
+    font-size: 12px;
+}
+
+.custom-file-label {
+    overflow: hidden;
+}
