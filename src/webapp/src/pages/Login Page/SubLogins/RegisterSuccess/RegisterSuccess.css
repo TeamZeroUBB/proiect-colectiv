@@ -1,0 +1,23 @@
+.register-success{
+    margin: 50px auto;
+    max-width: 800px;
+    max-height: 300px;
+    border: 1px solid #1ab188;
+}
+
+.register-success-title{
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    background-color: #1ab188;
+}
+
+.register-success-body{
+    font-size: 26px;
+    font-weight: 450px;
+    color: black;
+}
+
+.register-success-back{
+    font-size: 22px;
+}

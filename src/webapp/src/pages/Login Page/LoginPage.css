@@ -1,0 +1,87 @@
+.loginpage-form {
+	background: rgba(19, 35, 47, 0.9);
+	padding: 40px;
+	max-width: 600px;
+	margin: 40px auto;
+	border-radius: 4px;
+	box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+/*TAB GROUP*/
+
+.loginpage-tab-group {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0 0 40px 0;
+}
+
+.loginpage-tab-group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.loginpage-tab-group li {
+	text-decoration: none;
+	padding: 15px;
+	background: rgba(160, 179, 176, 0.25);
+	color: #a0b3b0;
+	font-size: 20px;
+	float: left;
+	width: 50%;
+	text-align: center;
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+
+.loginpage-tab-group li:hover {
+	background: #179b77;
+	color: #ffffff;
+}
+
+.loginpage-tab-group .active {
+	background: #1ab188;
+	color: #ffffff;
+}
+
+/*END TAG GROUP*/
+
+.loginpage-tab-content > div{
+	display: table;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+	color: #ffffff;
+	font-weight: 300;
+	margin: 0 0 40px;
+}
+
+.button {
+	display: block;
+	width: 100%;
+	border: 0;
+	outline: none;
+	border-radius: 0;
+	padding: 15px 0;
+	font-size: 2rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	background: #1ab188;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+
+.button:hover, .button:focus {
+	background: #179b77;
+}
+
+.error-text-color{color: #FF4136;}
+
+.error-text{
+	text-align: center;
+	margin: -20px 0 30px 0;
+}

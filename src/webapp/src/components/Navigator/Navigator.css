@@ -1,0 +1,44 @@
+.navi{
+	display: flex;
+	flex-direction: row;
+}
+
+.navi div{
+	text-align: center;
+	text-decoration: none;
+	background-color: rgba(48, 48, 48, 1);
+}
+
+.navi-left{
+	flex: 2 0 0;
+}
+
+.navi-logo{
+	position: absolute;
+	left: 10%;
+	height: 100px;
+	width: 100px;
+	border-radius: 100%;
+	background: url("../../media/logo.png") no-repeat;
+	background-size: 100%;
+}
+
+.navi-right{
+	flex: 1 0 0;
+	display: flex;
+	flex-direction: row;
+}
+
+.navi-button{
+	font-size: 22px;
+	color: white;
+	outline: none;
+	padding: 14px 16px;
+	background-color: rgba(48, 48, 48, 1);
+	border: none;
+	text-decoration: none;
+}
+
+.navi-right button:hover{
+	background-color: rgba(100, 100, 100, 1);
+}

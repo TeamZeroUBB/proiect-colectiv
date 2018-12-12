@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping(path = "/client/account")
 public class ClientAccountController {
     private final UserFacade userFacade;
@@ -23,50 +23,31 @@ public class ClientAccountController {
         this.userFacade = userFacade;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/register")
-    public String showRegisterUser(Model model) {
-        model.addAttribute("ClientUserDto", new ClientUserDto());
-        return "client/register";
-    }
-
     @RequestMapping(method = RequestMethod.POST, path = "/register")
-    public String registerUser(@ModelAttribute("ClientUserDto")ClientUserDto clientUserDto, Model model, BindingResult bindingResult) {
-
-        String page;
-
+    public ResponseEntity<String> registerUser(@ModelAttribute("clientUserDto")ClientUserDto clientUserDto/*, Model model*/, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
-            model.addAttribute("message","register.usernameOrPassword.error");
-            page = "client/register";
+            return ResponseEntity.unprocessableEntity().body("Error binding model");
         } else {
             Boolean result = userFacade.registerClient(clientUserDto);
             if (result) {
-                model.addAttribute("message", "registration.success.message");
-                page = "misc/genericSuccess";
+                return ResponseEntity.ok("Success");
             } else {
-                model.addAttribute("message", "register.emailTaken.error");
-                page = "client/register";
+                return ResponseEntity.badRequest().body("Could not register");
             }
         }
-        return page;
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/activate")
-    public String activateUser(@RequestParam(value = "token", required = false) String token, Model model) {
-
-        String page;
-
+    public ResponseEntity<String> activateUser(@RequestParam(value = "token", required = false) String token, Model model) {
         Boolean result = userFacade.activateClient(token);
         if(result)
         {
-            model.addAttribute("message","register.accountActive.message");
-            page = "misc/registerSuccess";
+            return ResponseEntity.ok("Success");
         }
         else
         {
-            model.addAttribute("message","register.tokenExpired.error");
-            page = "register";
+            return ResponseEntity.badRequest().body("Bad token");
         }
-        return page;
     }
 
 
@@ -80,11 +61,15 @@ public class ClientAccountController {
 
     @ResponseBody
     @PutMapping("/update")
-    public ResponseEntity<String> updateClientUser(@RequestBody ClientUserDto clientUserDto){
+    public ResponseEntity<String> updateClientUser(@RequestBody ClientUserDto clientUserDto, BindingResult bindingResult){
+        if(bindingResult.hasErrors()) {
+            return ResponseEntity.unprocessableEntity().body("Error binding model");
+        }
+
         userFacade.updateClientUser(
                 ClientUserConverter.convertFromDto(clientUserDto)
         );
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Success");
     }
 
     @ResponseBody

@@ -1,0 +1,49 @@
+.input-group {
+	display: table;
+	margin: auto;
+	position: relative;
+	margin-bottom: 45px;
+	background-color: inherit;
+	max-width: 300px;
+}
+
+.input-textinput {
+	box-sizing: border-box;
+	font-size: 18px;
+	padding: 10px 10px 10px 5px;
+	display: block;
+	width: 300px;
+	border: none;
+	border-bottom: 1px solid;
+	background-color: inherit;
+}
+
+.input-textinput:focus {
+	outline: none;
+}
+
+/* label ======================================= */
+
+.input-label {
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: 0.2s ease all;
+}
+
+/* active state */
+
+.input-textinput:focus~.input-label, .input-textinput:valid~.input-label {
+	top: -20px;
+	font-size: 14px;
+}
+
+.input-default-bar{border-color: #a0b3b0;}
+.input-error-bar{border-color: #FF4136;}
+.input-success-bar{border-color: #2ECC40;}
+.input-default-text{color: #a0b3b0}
+.input-error-text{color: #FF4136;}
+.input-success-text{color: #2ECC40;}

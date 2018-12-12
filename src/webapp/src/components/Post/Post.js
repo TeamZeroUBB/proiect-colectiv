@@ -7,21 +7,21 @@ import './Post.css';
 //3) Post body
 
 class Post extends Component{
-    render(){
-        return (
-            <div class='post-container'>
-                <div class='post-title'>
-                    {this.props.title}
-                    <div class='post-author'>
-                        {this.props.author}
-                    </div>
-                </div>
-                <div class='post-body'>
-                    {this.props.body}
-                </div>
-            </div>
-        );
-    }
+	render(){
+		return (
+			<div className='post-container'>
+				<div className='post-title'>
+					{this.props.title}
+					<div className='post-author'>
+						{this.props.author}
+					</div>
+				</div>
+				<div className='post-body'>
+					{this.props.body}
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Post;

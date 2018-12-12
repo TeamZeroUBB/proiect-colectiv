@@ -24,31 +24,21 @@ public class BackofficeAccountController {
         this.backofficeAccountFacade = backofficeAccountFacade;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/register")
-    public String showCreateAccountForm(Model model) {
-
-        model.addAttribute("backofficeUserDto", new BackofficeUserDto());
-        return "backoffice/backofficeRegister";
-    }
-
     @RequestMapping(method = RequestMethod.POST, path = "/register")
-    public String createAccount(@ModelAttribute("backofficeUserDto") BackofficeUserDto backofficeUserDto, Model model, BindingResult bindingResult) {
+    public ResponseEntity<String> createAccount(@ModelAttribute("backofficeUserDto") BackofficeUserDto backofficeUserDto, Model model, BindingResult bindingResult) {
 
-        try {
-            if(bindingResult.hasErrors()) {
-                model.addAttribute("message", "account.nameOrPassword.error");
-                model.addAttribute("success", false);
-            } else {
+        if(bindingResult.hasErrors()) {
+            return ResponseEntity.unprocessableEntity().body("Could not bind entity");
+        } else {
+            try {
                 backofficeAccountFacade.register(backofficeUserDto);
-                model.addAttribute("success", true);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            model.addAttribute("message", "server.fail.error");
-            model.addAttribute("success", false);
+            catch (Exception e)
+            {
+                return ResponseEntity.badRequest().body("Email already exists");
+            }
+            return ResponseEntity.ok("Success");
         }
-
-        return "backoffice/backofficeRegister";
     }
 
 
