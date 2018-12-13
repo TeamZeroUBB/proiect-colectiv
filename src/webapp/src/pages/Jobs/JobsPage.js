@@ -60,14 +60,22 @@ export default class JobsPage extends Component {
         }
         return jobs;
     }
-
+    //TODO link to back-end
+    filterJobs = (e) => {
+        const searchValue = e.target.value;
+        this.setState({
+            jobs: defaultJobs.filter(job => job.title.includes(searchValue)),
+            searchValue
+        });
+    };
+//TODO link to back-end
     deleteCallback = (jobId) => {
         const jobs = this.state.jobs;
         this.setState({
             jobs: jobs.filter(job => job.id!==jobId)
         })
     };
-
+//TODO link to back-end
     saveCallback = (newJob) => {
         const jobs = this.state.jobs;
         const index = jobs.findIndex(job => job.id === newJob.id);
@@ -88,14 +96,6 @@ export default class JobsPage extends Component {
             />);
         }
         return subContainers;
-    };
-
-    filterJobs = (e) => {
-        const searchValue = e.target.value;
-        this.setState({
-            jobs: defaultJobs.filter(job => job.title.includes(searchValue)),
-            searchValue
-        });
     };
 
     render() {
