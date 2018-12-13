@@ -1,0 +1,18 @@
+#jobsContainer{
+    /*background-color: red;*/
+    height: 100%;
+    width:100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /*overflow: auto;*/
+}
+#mainPage{
+    height:100%;
+    width:100%;
+    margin:0 auto;
+}
+
+#searchBar input{
+    width: 200%;
+}

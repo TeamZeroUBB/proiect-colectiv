@@ -8,6 +8,7 @@ import LoginPage from './pages/Login Page/LoginPage';
 import axios from 'axios';
 import { apiUrl } from './constants';
 import RegisterSuccess from './pages/Login Page/SubLogins/RegisterSuccess/RegisterSuccess';
+import JobsPage from "./pages/Jobs/JobsPage";
 
 //base url for ajax calls
 axios.defaults.baseURL = apiUrl;
@@ -16,17 +17,18 @@ axios.defaults.baseURL = apiUrl;
 axios.defaults.headers.post['crossDomain'] = true;
 
 class App extends Component {
-  render() {
-	return (
-	  <Router>
-		<div className="App">
-		  <Route exact path="/" component={FrontPage} />
-		  <Route path="/login" component={LoginPage} />
-			<Route path="/signupsuccess" component={RegisterSuccess} />
-		</div>
-	  </Router>
-	);
-  }
+    render() {
+        return (
+            <Router>
+                <div className="App">
+                    <Route exact path="/" component={FrontPage} />
+                    <Route path="/login" component={LoginPage} />
+                    <Route path="/signupsuccess" component={RegisterSuccess} />
+                    <Route path="/jobs" component={JobsPage}/>
+                </div>
+            </Router>
+        );
+    }
 }
 
 export default App;

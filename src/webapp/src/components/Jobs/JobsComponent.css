@@ -1,0 +1,64 @@
+#jobOfferContainer{
+    box-shadow: rgba(0, 0, 0, 0.75) 3px 3px 10px 1px;
+    background-color: white;
+    height: 90%;
+    width: 20%;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 8px;
+    display:inline-block;
+}
+
+#jobOfferContainer:hover {
+    box-shadow: rgba(0, 0, 0, 0.75) 3px 3px 20px 1px;
+}
+
+#jobImage{
+    height: 45%;
+    /*background-color:blue;*/
+}
+
+#jobTitle {
+    /*background-color: violet;*/
+    margin-top:10px;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+    height: 15%;
+    cursor: pointer;
+}
+
+#jobDescription {
+    /*background-color: tan;*/
+    margin-top: 10px;
+    font-size: 20px;
+    height: 26%;
+    text-align: center;
+    opacity: 0.8;
+}
+
+#jobImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+#deleteJob {
+    /*background-color: green;*/
+    /*float:right;*/
+    text-align: right;
+    height: 8%;
+}
+#deleteJob img{
+    margin-top: 2px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#deleteIcon {
+    filter: opacity(60%);
+}
+
+#deleteIcon:hover {
+    filter: opacity(100%);
+}
