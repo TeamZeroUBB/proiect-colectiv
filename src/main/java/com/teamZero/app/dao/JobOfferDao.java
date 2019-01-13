@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -215,4 +216,26 @@ public class JobOfferDao {
             return jobOffer;
         }
     }
+
+
+    public List<String> getAllJobTypes(){
+
+        List<String> jobTypeList = new ArrayList<>();
+
+        jobTypeList.add("Software development");
+        jobTypeList.add("Health");
+        jobTypeList.add("Sales");
+        jobTypeList.add("Entertainment");
+        jobTypeList.add("HR");
+        jobTypeList.add("Marketing");
+
+        //TODO add more jobs here
+
+        return jobTypeList;
+    }
+
+
+
+
+
 }

@@ -46,13 +46,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling()
                     .authenticationEntryPoint(restEntryPoint)
 
-                //Disabled until security is fixed
-                //.and()
-                //.authorizeRequests()
-                //    .antMatchers("/user-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
-                //    .antMatchers("/job-offer-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
-                //    .antMatchers("/company-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
-                //    .antMatchers("/admin-service/**").hasAnyAuthority(UserRole.ROLE_ADMIN.name())
+                //#TODO Somebody fix the security pls
+               //.and()
+               //.authorizeRequests()
+               //    .antMatchers("/user-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
+               //    .antMatchers("/job-offer-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
+               //    .antMatchers("/company-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
+               //    .antMatchers("/admin-service/**").hasAnyAuthority(UserRole.ROLE_ADMIN.name())
 
                 .and()
                 .formLogin()
@@ -60,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .failureUrl("/login?error=true")
                     .passwordParameter("password")
                     .usernameParameter("username")
-                   // .successHandler(authSuccessHandler)
+                    .successHandler(authSuccessHandler)
 
                 .and()
                 .logout();

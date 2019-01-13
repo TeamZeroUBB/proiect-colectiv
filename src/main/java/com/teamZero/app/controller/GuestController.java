@@ -44,7 +44,7 @@ public class GuestController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/job-offers/filer")
     public ResponseEntity<JobOfferList> filterOffers(
             @RequestParam(value = "start", defaultValue = "0") int start,
             @RequestParam(value = "limit", defaultValue = "15") int limit,
@@ -92,6 +92,12 @@ public class GuestController {
         }
     }
 
+
+    @GetMapping("/job-types")
+    public ResponseEntity getAllJobTypes(){
+
+        return ResponseEntity.status(200).body(jobOfferService.getAllJobTypes());
+    }
 
 
     @PostMapping("/register")

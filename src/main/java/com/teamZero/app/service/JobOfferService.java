@@ -43,13 +43,13 @@ public class JobOfferService{
     @Async
     public CompletableFuture<JobOfferList> getJobOffers(int start, int limit){
 
-        start = start < 0 ? 0 : start;
-
         int totalSize = jobOfferDao.getAll().size();
+
+        start = start < 0 ? 0 : start;
 
         JobOfferList list = new JobOfferList();
 
-        int limit1 = start + limit > totalSize ? totalSize - start - 1 : start + limit;
+        int limit1 = start + limit > totalSize ? totalSize - start : start + limit;
 
         list.setList(jobOfferDao.getPagedJobOffers(start, limit1));
         list.setTotalSize(totalSize);
@@ -81,6 +81,10 @@ public class JobOfferService{
 
         return CompletableFuture.completedFuture(jobOfferList);
 
+    }
+
+    public List<String> getAllJobTypes(){
+        return jobOfferDao.getAllJobTypes();
     }
 
 }
