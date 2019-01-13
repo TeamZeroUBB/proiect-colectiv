@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/JobDb
+    username: postgres
+    password: postgres
+
+
+server:
+  port: 8080
+  address: 192.168.100.4
