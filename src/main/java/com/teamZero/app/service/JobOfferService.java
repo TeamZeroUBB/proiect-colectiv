@@ -35,9 +35,7 @@ public class JobOfferService{
 
     @Async
     public CompletableFuture<List<JobOffer>> getAllJobOffers(){
-        return CompletableFuture.completedFuture(
-                jobOfferDao.getAll()
-        );
+        return CompletableFuture.completedFuture(jobOfferDao.getAll());
     }
 
     @Async

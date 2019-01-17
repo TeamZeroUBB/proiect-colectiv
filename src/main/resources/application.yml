@@ -4,4 +4,3 @@ spring:
     url: jdbc:postgresql://localhost:5432/JobDb
     username: postgres
     password: postgres
-

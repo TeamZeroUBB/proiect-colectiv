@@ -3,7 +3,6 @@ package com.teamZero.app.domain.user;
 import com.teamZero.app.domain.job.JobOffer;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.List;
 
 public class AppUser implements Serializable {
@@ -20,7 +19,7 @@ public class AppUser implements Serializable {
     private String phoneNumber;
 
     //Job offers added to favorites
-    private List<JobOffer> savedOffers;
+    private List<JobOffer> favoriteJobOffers;
     //Job offers posted by this user;
     private List<JobOffer> postedJobOffers;
 
@@ -53,12 +52,12 @@ public class AppUser implements Serializable {
         this.companyId = companyId;
     }
 
-    public List<JobOffer> getSavedOffers() {
-        return savedOffers;
+    public List<JobOffer> getFavoriteJobOffers() {
+        return favoriteJobOffers;
     }
 
-    public void setSavedOffers(List<JobOffer> savedOffers) {
-        this.savedOffers = savedOffers;
+    public void setFavoriteJobOffers(List<JobOffer> favoriteJobOffers) {
+        this.favoriteJobOffers = favoriteJobOffers;
     }
 
     public AppUser() { }
@@ -142,7 +141,7 @@ public class AppUser implements Serializable {
                 ", lastName='" + lastName + '\'' +
                 ", city='" + city + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", savedOffers=" + savedOffers +
+                ", favoriteJobOffers=" + favoriteJobOffers +
                 ", postedJobOffers=" + postedJobOffers +
                 ", companyId=" + companyId +
                 '}';

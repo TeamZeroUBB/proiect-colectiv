@@ -20,6 +20,8 @@ public class UserRoleDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    //GET -----------------------------------------------------------------------------------------------------
+
     public List<UserRole> getRolesForUser(Long userId){
 
         Map<String, Object> parameters = new HashMap<>();
@@ -33,7 +35,7 @@ public class UserRoleDao {
 
     }
 
-
+    //ADD -----------------------------------------------------------------------------------------------
 
     public void addUserRole(Long userId, UserRole role){
 
@@ -43,6 +45,9 @@ public class UserRoleDao {
 
         jdbcTemplate.update("INSERT INTO app_user_has_role VALUES (:userId, :role)", parameters);
     }
+
+
+    //REMOVE ----------------------------------------------------------------------------------------------------
 
     public void removeUserRole(Long userId, UserRole role){
 

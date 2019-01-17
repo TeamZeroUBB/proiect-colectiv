@@ -72,6 +72,7 @@ public class JobOfferDao {
         return jdbcTemplate.queryForObject("SELECT * FROM job_offer WHERE job_offer_pk = :jobOfferId", parameters, new JobOfferRowMapper());
     }
 
+
     public JobOffer add(JobOffer jobOffer){
 
 
@@ -195,6 +196,26 @@ public class JobOfferDao {
 
     }
 
+
+    //REMOVE WHEN USER OR COMPANY IS DELETED
+
+    public void deleteByUserId(Long userId){
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("userId", userId);
+
+        jdbcTemplate.update("DELETE FROM job_offer WHERE app_user_pk = :userId", parameters);
+
+    }
+
+    public void deleteByCompanyId(Long companyId){
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("companyId", companyId);
+
+        jdbcTemplate.update("DELETE FROM job_offer WHERE company_pk = :companyId", parameters);
+
+    }
 
     //MAPPER------------------------------------------------------------------------------------------------------------------
 

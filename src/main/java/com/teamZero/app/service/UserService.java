@@ -38,7 +38,7 @@ public class UserService{
         List<JobOffer> savedJobOffers = jobOfferDao.getFavoriteJobOffersForUser(appUser.getId());
         List<JobOffer> postedJobOffers = jobOfferDao.getJobOffersPostedByUser(appUser.getId());
 
-        appUser.setSavedOffers(savedJobOffers);
+        appUser.setFavoriteJobOffers(savedJobOffers);
         appUser.setPostedJobOffers(postedJobOffers);
     }
 
@@ -93,6 +93,8 @@ public class UserService{
 
         Company company = companyDao.getOneByUserId(userId);
         companyDao.delete(company.getCompanyId());
+
+        jobOfferDao.deleteByUserId(userId);
     }
 
     @Async

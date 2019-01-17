@@ -22,6 +22,8 @@ public class CompanyDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    //GET -----------------------------------------------------------------------------------------------------
+
     public List<Company> getAll() {
         return jdbcTemplate.query("SELECT * FROM company", new CompanyDao.CompanyRowMapper());
     }
@@ -43,6 +45,8 @@ public class CompanyDao {
 
     }
 
+    //ADD --------------------------------------------------------------------------------------------------
+
     public void add(Company company){
 
         Map<String, Object> parameters = new HashMap<>();
@@ -56,6 +60,8 @@ public class CompanyDao {
         jdbcTemplate.update("INSERT INTO company VALUES (:name, :description, :email, :phoneNumber, :phoneNumber, :userId)", parameters);
 
     }
+
+    //UPDATE --------------------------------------------------------------------------------------------
 
     public void update(Company company){
 
@@ -71,6 +77,9 @@ public class CompanyDao {
         jdbcTemplate.update("UPDATE company SET name = :name, description = :description, email = :email, phone_number = :phoneNumber, app_user_pk = :userId WHERE Company_pk = :companyId", parameters);
     }
 
+    //REMOVE ----------------------------------------------------------------------------------------------------
+
+
     public void delete(Long companyId){
 
         Map<String, Object> parameters = new HashMap<>();
@@ -80,6 +89,8 @@ public class CompanyDao {
 
     }
 
+
+    //MAPPER--------------------------------------------------------------------------------------------
 
     class CompanyRowMapper implements RowMapper<Company> {
 

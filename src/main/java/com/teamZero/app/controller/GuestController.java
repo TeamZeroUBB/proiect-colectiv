@@ -81,7 +81,7 @@ public class GuestController {
     }
 
     @GetMapping("/company/{companyId}")
-    public ResponseEntity<Company> getCompany(@PathVariable Long companyId){
+    public ResponseEntity<Company> getCompanyByCompanyId(@PathVariable Long companyId){
 
         try{
             return ResponseEntity.status(200).body(companyService.getCompanyByCompanyId(companyId).get());
@@ -92,6 +92,17 @@ public class GuestController {
         }
     }
 
+    @GetMapping("/company-of-user/{userId}")
+    public ResponseEntity<Company> getCompanyByUserId(@PathVariable Long userId){
+
+        try{
+            return ResponseEntity.status(200).body(companyService.getCompanyByUserId(userId).get());
+        }
+        catch (Exception e){
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.status(500).body(null);
+        }
+    }
 
     @GetMapping("/job-types")
     public ResponseEntity getAllJobTypes(){

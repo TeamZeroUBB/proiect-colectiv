@@ -48,8 +48,8 @@ public class CompanyService {
     }
 
     @Async
-    public List<Company> getAllCompanies(){
-        return companyDao.getAll();
+    public CompletableFuture<List<Company>> getAllCompanies(){
+        return CompletableFuture.completedFuture(companyDao.getAll());
     }
 
     @Async
@@ -68,6 +68,7 @@ public class CompanyService {
     @Async
     public void delete(Long companyId){
         companyDao.delete(companyId);
+        jobOfferDao.deleteByCompanyId(companyId);
     }
 
     @Async

@@ -26,6 +26,9 @@ public class AppUserDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    //GET -----------------------------------------------------------------------------------------------------
+
+
     public List<AppUser> getAll() {
         return jdbcTemplate.query("SELECT * FROM App_User", new AppUserRowMapper());
     }
@@ -132,6 +135,8 @@ public class AppUserDao {
 
     }
 
+
+    //MAPPER--------------------------------------------------------------------------------------------
 
     class AppUserRowMapper implements RowMapper<AppUser> {
 
