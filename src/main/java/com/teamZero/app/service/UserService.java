@@ -35,7 +35,7 @@ public class UserService{
 
     private void addJobsToUser(AppUser appUser){
 
-        List<JobOffer> savedJobOffers = jobOfferDao.getJobOffersForUser(appUser.getId());
+        List<JobOffer> savedJobOffers = jobOfferDao.getFavoriteJobOffersForUser(appUser.getId());
         List<JobOffer> postedJobOffers = jobOfferDao.getJobOffersPostedByUser(appUser.getId());
 
         appUser.setSavedOffers(savedJobOffers);

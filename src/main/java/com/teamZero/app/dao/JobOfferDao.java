@@ -27,9 +27,8 @@ public class JobOfferDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    //TODO job_offer_type in db; (job type)
 
-    //POSTED OR SAVED JOB OFFERRS ------------------------------------------------------------------------------------------------------------
+    //POSTED OR SAVED JOB OFFERS ------------------------------------------------------------------------------------------------------------
 
     public List<JobOffer> getJobOffersPostedByCompany(Long companyId){
 
@@ -45,20 +44,6 @@ public class JobOfferDao {
         parameters.put("userId", userId);
 
         return jdbcTemplate.query("SELECT * FROM job_offer WHERE app_user_pk = :userId", parameters, new JobOfferRowMapper());
-    }
-
-
-    public List<JobOffer> getJobOffersForUser(Long userId){
-
-        Map<String, Object> parameters = new HashMap<>();
-        parameters.put("userId", userId);
-
-        return jdbcTemplate.query("SELECT * FROM app_user_has_job_offer a " +
-                        "                               INNER JOIN job_offer b " +
-                        "                   ON a.job_offer_pk = b.job_offer_pk " +
-                        "                   WHERE a.app_user_pk = :userId",
-                parameters, new JobOfferRowMapper());
-
     }
 
 
@@ -165,18 +150,18 @@ public class JobOfferDao {
         if (!endDate.equals("NaN")) {
 
             if (whereIsSet) {
-                codition += "\nAND created_timestamp <= :endDate";
+                codition += "\n AND created_timestamp <= :endDate";
             } else {
-                codition += "\nWHERE created_timestamp <= :endDate";
+                codition += "\n WHERE created_timestamp <= :endDate";
                 whereIsSet = true;
             }
         }
 
         if (!jobType.equals("NaN")){
             if (whereIsSet) {
-                codition += "\nAND jobType = :jobType";
+                codition += "\n AND jobType = :jobType";
             } else {
-                codition += "\nWHERE jobType = :jobType";
+                codition += "\n WHERE jobType = :jobType";
                 whereIsSet = true;
             }
         }
@@ -192,6 +177,24 @@ public class JobOfferDao {
         return jdbcTemplate.query(query, parameters, new JobOfferRowMapper());
 
     }
+
+
+    //FAVORITE JOB OFFERS----------------------------------------------------------------------------------------------------------
+
+    public List<JobOffer> getFavoriteJobOffersForUser(Long userId){
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("userId", userId);
+
+        return jdbcTemplate.query(
+                    "SELECT * FROM job_offer a " +
+                        "INNER JOIN app_user_has_favorite_job_offer b " +
+                        "ON a.job_offer_pk = b.job_offer_pk " +
+                        "WHERE b.app_user_pk = :userId",
+                parameters, new JobOfferRowMapper());
+
+    }
+
 
     //MAPPER------------------------------------------------------------------------------------------------------------------
 

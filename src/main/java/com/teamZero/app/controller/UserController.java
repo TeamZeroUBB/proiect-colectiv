@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 @RestController("/user-service")
@@ -47,6 +48,13 @@ public class UserController {
     public ResponseEntity deleteUser(@PathVariable Long userId, @PathVariable Long deletedUserId){
 
         try{
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+            if (! userId.equals(deletedUserId) && ! authentication.getAuthorities().contains(new SimpleGrantedAuthority(UserRole.ROLE_ADMIN.name()))){
+                return ResponseEntity.status(403).body("You do not have the appropriate credential to complete this action");
+            }
+
 
             userService.deleteUser(userId);
             return ResponseEntity.status(204).body(null);
@@ -87,7 +95,7 @@ public class UserController {
     }
 
     @GetMapping("/download-cv/{userId}")
-    public void downloadCv(HttpServletResponse response, @PathVariable Long userId){
+    public void downloadCv(HttpServletResponse response, @PathVariable Long userId) throws IOException {
 
         try {
             AppUser appUser = userService.getUserById(userId).get();
@@ -99,6 +107,7 @@ public class UserController {
 
         }catch (Exception e){
             LOGGER.error(e.getMessage(), e);
+            response.sendError(500, "Something went wrong while downloading the cv");
         }
     }
 
