@@ -1,6 +1,8 @@
 #jobOfferModalContainer{
     width:100%;
     height:100%;
+    display: flex;
+    flex-direction: row;
 }
 #jobOfferHeader{
     display: inline-block;
@@ -26,13 +28,60 @@
     filter: opacity(100%);
 }
 
-
-#descriptionTextArea {
-    max-height: 150px;
-    text-align: center;
+#jobDetailsModal {
+    height: 93%;
+    flex: 3;
 }
 
-#titleInput {
-    font-size: 28px;
-    color: black;
+#jobTitleModal {
+    width: 100%;
+    height: 15%;
+}
+
+#jobType {
+    margin-top:15px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    height: 15%;
+}
+
+#jobContactDetailsModal {
+    height: 93%;
+    width: 100%;
+    flex: 2;
+}
+
+#jobImageModal{
+    height: 50%;
+    width: 100%;
+}
+
+#jobImageModal img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.jobContact {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    flex:1 ;
+}
+#jobContactDetailsSubContainer {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#applyButton {
+    text-align: center;
+    flex: 1;
+}
+
+#applyButton Button{
+    width: 80%;
+    margin:auto;
 }
