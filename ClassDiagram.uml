@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.teamZero.app</OriginalElement>
+  <nodes>
+    <node x="1023.2313002008034" y="989.5">com.teamZero.app.CompanyDao.CompanyRowMapper</node>
+    <node x="1885.6168674698797" y="2202.5">com.teamZero.app.AdminController</node>
+    <node x="867.0" y="2454.0">com.teamZero.app.AsyncConfig</node>
+    <node x="1501.2313002008034" y="2169.5">com.teamZero.app.UserController</node>
+    <node x="3090.9813002008036" y="2202.5">com.teamZero.app.SecurityConfig</node>
+    <node x="0.0" y="2454.0">com.teamZero.app.UserRoleDto</node>
+    <node x="2041.6481174698797" y="1788.0">com.teamZero.app.UserRoleService</node>
+    <node x="3379.6481174698797" y="1821.0">com.teamZero.app.AuthSuccessHandler</node>
+    <node x="793.4813002008034" y="1721.5">com.teamZero.app.CompanyService</node>
+    <node x="914.7002008032133" y="461.0">com.teamZero.app.Company</node>
+    <node x="129.37557730923618" y="1376.5">com.teamZero.app.JobOfferList</node>
+    <node x="1324.2313002008034" y="1700.0">com.teamZero.app.UserService</node>
+    <node x="1993.0" y="2454.0">com.teamZero.app.service</node>
+    <node x="1302.0" y="2454.0">com.teamZero.app.SwaggerConfig</node>
+    <node x="2597.0" y="2454.0">com.teamZero.app.util</node>
+    <node x="313.6255773092362" y="538.0">com.teamZero.app.JobOfferDao.JobOfferRowMapper</node>
+    <node x="2066.0231174698797" y="1331.5">com.teamZero.app.UserRoleDao</node>
+    <node x="307.0" y="0.0">com.teamZero.app.JobOffer</node>
+    <node x="566.0" y="2454.0">com.teamZero.app.EMailUtil</node>
+    <node x="2658.1187500000005" y="989.5">com.teamZero.app.AppUserDao.AppUserRowMapper</node>
+    <node x="220.37557730923618" y="834.0">com.teamZero.app.JobOfferDao</node>
+    <node x="924.9813002008034" y="1309.0">com.teamZero.app.CompanyDao</node>
+    <node x="2440.6481174698797" y="1787.5">com.teamZero.app.CustomAuthenticationProvider</node>
+    <node x="522.250200803213" y="2136.0">com.teamZero.app.GuestController</node>
+    <node x="2455.0" y="2454.0">com.teamZero.app.dto</node>
+    <node x="2844.6481174698797" y="1832.5">com.teamZero.app.RestEntryPoint</node>
+    <node x="3937.6481174698797" y="1821.0">com.teamZero.app.LoginService</node>
+    <node x="184.0" y="2454.0">com.teamZero.app.ErrorController</node>
+    <node x="1088.0" y="2454.0">com.teamZero.app.Main</node>
+    <node x="10.5" y="1743.5">com.teamZero.app.JobOfferService</node>
+    <node x="2656.8687500000005" y="1276.0">com.teamZero.app.AppUserDao</node>
+    <node x="1655.0" y="2454.0">com.teamZero.app.JobOfferSearch</node>
+    <node x="69.01061746987943" y="2191.5">com.teamZero.app.JobOfferController</node>
+    <node x="1832.117243975903" y="944.5">com.teamZero.app.UserRole</node>
+    <node x="1480.0" y="2454.0">com.teamZero.app.controller</node>
+    <node x="4170.64811746988" y="1810.5">com.teamZero.app.CorsFilter</node>
+    <node x="2153.0" y="2454.0">com.teamZero.app.config</node>
+    <node x="1828.0" y="2454.0">com.teamZero.app.domain</node>
+    <node x="2187.2437500000005" y="383.0">com.teamZero.app.AppUser</node>
+    <node x="982.250200803213" y="2202.5">com.teamZero.app.CompanyController</node>
+    <node x="2311.0" y="2454.0">com.teamZero.app.dao</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.teamZero.app.UserRoleService" target="com.teamZero.app.AppUser">
+      <point x="47.375" y="-70.0" />
+      <point x="2278.5231174698797" y="1630.0" />
+      <point x="2467.2437500000005" y="1630.0" />
+      <point x="2467.2437500000005" y="814.0" />
+      <point x="2313.8062500000005" y="814.0" />
+      <point x="14.0625" y="180.5" />
+    </edge>
+    <edge source="com.teamZero.app.UserService" target="com.teamZero.app.AppUser">
+      <point x="71.625" y="-158.0" />
+      <point x="1586.8563002008034" y="1600.0" />
+      <point x="1993.617243975903" y="1600.0" />
+      <point x="1993.617243975903" y="794.0" />
+      <point x="2229.4312500000005" y="794.0" />
+      <point x="-70.3125" y="180.5" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferService" target="com.teamZero.app.JobOffer">
+      <point x="-180.0" y="-114.5" />
+      <point x="70.5" y="1680.0" />
+      <point x="109.15838353413687" y="1680.0" />
+      <point x="109.15838353413687" y="323.0" />
+      <point x="333.875" y="323.0" />
+      <point x="-80.625" y="146.5" />
+    </edge>
+    <edge source="com.teamZero.app.AdminController" target="com.teamZero.app.UserRole">
+      <point x="-74.0" y="-70.0" />
+      <point x="1959.6168674698797" y="1580.0" />
+      <point x="1871.6168674698797" y="1580.0" />
+      <point x="1871.6168674698797" y="1256.0" />
+      <point x="1922.117243975903" y="1256.0" />
+      <point x="20.0" y="70.5" />
+    </edge>
+    <edge source="com.teamZero.app.UserService" target="com.teamZero.app.CompanyDao">
+      <point x="-119.375" y="-158.0" />
+      <point x="1395.8563002008034" y="1610.0" />
+      <point x="1164.9813002008034" y="1610.0" />
+      <point x="80.0" y="104.0" />
+    </edge>
+    <edge source="com.teamZero.app.UserController" target="com.teamZero.app.UserRole">
+      <point x="42.0" y="-103.0" />
+      <point x="1711.2313002008034" y="2106.0" />
+      <point x="1855.1168674698797" y="2106.0" />
+      <point x="1855.1168674698797" y="1246.0" />
+      <point x="1902.117243975903" y="1246.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferList" target="com.teamZero.app.JobOffer">
+      <point x="-37.5" y="-36.5" />
+      <point x="166.87557730923618" y="1256.0" />
+      <point x="198.87557730923618" y="1256.0" />
+      <point x="198.87557730923618" y="333.0" />
+      <point x="351.7916666666665" y="333.0" />
+      <point x="-62.708333333333485" y="146.5" />
+    </edge>
+    <edge source="com.teamZero.app.UserRoleService" target="com.teamZero.app.AppUserDao">
+      <point x="142.125" y="-70.0" />
+      <point x="2373.2731174698797" y="1660.0" />
+      <point x="2768.6544642857148" y="1660.0" />
+      <point x="-44.71428571428578" y="137.0" />
+    </edge>
+    <edge source="com.teamZero.app.AppUser" target="com.teamZero.app.JobOffer">
+      <point x="-56.25" y="-180.5" />
+      <point x="2243.4937500000005" y="323.0" />
+      <point x="495.125" y="323.0" />
+      <point x="80.625" y="146.5" />
+    </edge>
+    <edge source="com.teamZero.app.SecurityConfig" target="com.teamZero.app.CorsFilter">
+      <point x="118.875" y="-70.0" />
+      <point x="3368.3563002008036" y="2116.0" />
+      <point x="4357.64811746988" y="2116.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyController" target="com.teamZero.app.Company">
+      <point x="-101.66666666666652" y="-70.0" />
+      <point x="1033.0835341365464" y="2046.0" />
+      <point x="737.7729668674701" y="2046.0" />
+      <point x="737.7729668674701" y="794.0" />
+      <point x="956.1377008032133" y="794.0" />
+      <point x="-69.0625" y="102.5" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferService" target="com.teamZero.app.JobOfferList">
+      <point x="-60.0" y="-114.5" />
+      <point x="190.5" y="1680.0" />
+      <point x="154.37557730923618" y="1680.0" />
+      <point x="-50.0" y="36.5" />
+    </edge>
+    <edge source="com.teamZero.app.AppUserDao.AppUserRowMapper" target="com.teamZero.app.AppUser">
+      <point x="60.0" y="-25.5" />
+      <point x="2838.1187500000005" y="794.0" />
+      <point x="2370.0562500000005" y="794.0" />
+      <point x="70.3125" y="180.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyService" target="com.teamZero.app.AppUser">
+      <point x="84.59999999999991" y="-136.5" />
+      <point x="1089.5813002008033" y="1630.0" />
+      <point x="1280.7313002008034" y="1630.0" />
+      <point x="1280.7313002008034" y="784.0" />
+      <point x="2201.3062500000005" y="784.0" />
+      <point x="-98.4375" y="180.5" />
+    </edge>
+    <edge source="com.teamZero.app.GuestController" target="com.teamZero.app.JobOfferList">
+      <point x="-110.0" y="-136.5" />
+      <point x="632.250200803213" y="2046.0" />
+      <point x="559.5000000000001" y="2046.0" />
+      <point x="559.5000000000001" y="1670.0" />
+      <point x="254.37557730923618" y="1670.0" />
+      <point x="50.0" y="36.5" />
+    </edge>
+    <edge source="com.teamZero.app.GuestController" target="com.teamZero.app.CompanyService">
+      <point x="36.666666666666515" y="-136.5" />
+      <point x="778.9168674698795" y="2056.0" />
+      <point x="899.2313002008034" y="2056.0" />
+      <point x="-105.75" y="136.5" />
+    </edge>
+    <edge source="com.teamZero.app.UserService" target="com.teamZero.app.JobOffer">
+      <point x="23.875" y="-158.0" />
+      <point x="1539.1063002008034" y="1590.0" />
+      <point x="1982.617243975903" y="1590.0" />
+      <point x="1982.617243975903" y="333.0" />
+      <point x="477.2083333333335" y="333.0" />
+      <point x="62.708333333333485" y="146.5" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferDao.JobOfferRowMapper" target="com.teamZero.app.JobOfferDao">
+      <point x="60.0" y="25.5" />
+      <point x="493.6255773092362" y="814.0" />
+      <point x="515.3755773092362" y="814.0" />
+      <point x="118.0" y="-181.0" />
+    </edge>
+    <edge source="com.teamZero.app.AppUserDao" target="com.teamZero.app.AppUserDao.AppUserRowMapper">
+      <point x="-104.33333333333326" y="-137.0" />
+      <point x="2709.0354166666675" y="1256.0" />
+      <point x="2718.1187500000005" y="1256.0" />
+      <point x="-60.0" y="25.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyDao" target="com.teamZero.app.CompanyDao.CompanyRowMapper">
+      <point x="0.0" y="-104.0" />
+      <point x="-61.75" y="25.5" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferController" target="com.teamZero.app.JobOffer">
+      <point x="-114.33333333333303" y="-81.0" />
+      <point x="126.1772841365464" y="2116.0" />
+      <point x="0.0" y="2116.0" />
+      <point x="0.0" y="313.0" />
+      <point x="315.9583333333335" y="313.0" />
+      <point x="-98.54166666666652" y="146.5" />
+    </edge>
+    <edge source="com.teamZero.app.GuestController" target="com.teamZero.app.JobOfferService">
+      <point x="-183.33333333333348" y="-136.5" />
+      <point x="558.9168674698795" y="2056.0" />
+      <point x="370.5" y="2056.0" />
+      <point x="120.0" y="114.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyDao" target="com.teamZero.app.Company">
+      <point x="-106.66666666666652" y="-104.0" />
+      <point x="978.3146335341369" y="1256.0" />
+      <point x="863.6479668674701" y="1256.0" />
+      <point x="863.6479668674701" y="814.0" />
+      <point x="1011.3877008032133" y="814.0" />
+      <point x="-13.8125" y="102.5" />
+    </edge>
+    <edge source="com.teamZero.app.CustomAuthenticationProvider" target="com.teamZero.app.AppUserDao">
+      <point x="48.0" y="-70.5" />
+      <point x="2680.6481174698797" y="1670.0" />
+      <point x="2813.3687500000005" y="1670.0" />
+      <point x="0.0" y="137.0" />
+    </edge>
+    <edge source="com.teamZero.app.SecurityConfig" target="com.teamZero.app.AuthSuccessHandler">
+      <point x="39.625" y="-70.0" />
+      <point x="3289.1063002008036" y="2106.0" />
+      <point x="3648.6481174698797" y="2106.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="com.teamZero.app.UserService" target="com.teamZero.app.AppUserDao">
+      <point x="167.125" y="-158.0" />
+      <point x="1682.3563002008034" y="1650.0" />
+      <point x="2723.940178571429" y="1650.0" />
+      <point x="-89.42857142857144" y="137.0" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferDao.JobOfferRowMapper" target="com.teamZero.app.JobOffer">
+      <point x="60.0" y="-25.5" />
+      <point x="493.6255773092362" y="363.0" />
+      <point x="423.4583333333335" y="363.0" />
+      <point x="8.958333333333485" y="146.5" />
+    </edge>
+    <edge source="com.teamZero.app.UserService" target="com.teamZero.app.UserRole">
+      <point x="-23.875" y="-158.0" />
+      <point x="1491.3563002008034" y="1630.0" />
+      <point x="1485.992243975903" y="1630.0" />
+      <point x="1485.992243975903" y="1236.0" />
+      <point x="1882.117243975903" y="1236.0" />
+      <point x="-20.0" y="70.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyService" target="com.teamZero.app.JobOfferDao">
+      <point x="-169.19999999999982" y="-136.5" />
+      <point x="835.7813002008036" y="1660.0" />
+      <point x="445.09395080321303" y="1660.0" />
+      <point x="445.09395080321303" y="1246.0" />
+      <point x="397.3755773092362" y="1246.0" />
+      <point x="0.0" y="181.0" />
+    </edge>
+    <edge source="com.teamZero.app.Company" target="com.teamZero.app.JobOffer">
+      <point x="55.25" y="-102.5" />
+      <point x="1080.4502008032132" y="343.0" />
+      <point x="459.2916666666665" y="343.0" />
+      <point x="44.791666666666515" y="146.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyService" target="com.teamZero.app.AppUserDao">
+      <point x="169.19999999999982" y="-136.5" />
+      <point x="1174.1813002008032" y="1640.0" />
+      <point x="2679.2258928571437" y="1640.0" />
+      <point x="-134.1428571428571" y="137.0" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferController" target="com.teamZero.app.UserRole">
+      <point x="114.33333333333303" y="-81.0" />
+      <point x="354.84395080321246" y="2066.0" />
+      <point x="1302.7313002008034" y="2066.0" />
+      <point x="1302.7313002008034" y="1216.0" />
+      <point x="1842.117243975903" y="1216.0" />
+      <point x="-60.0" y="70.5" />
+    </edge>
+    <edge source="com.teamZero.app.SecurityConfig" target="com.teamZero.app.CustomAuthenticationProvider">
+      <point x="-118.875" y="-70.0" />
+      <point x="3130.6063002008036" y="2116.0" />
+      <point x="2632.6481174698797" y="2116.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="com.teamZero.app.AppUserDao" target="com.teamZero.app.AppUser">
+      <point x="104.33333333333348" y="-137.0" />
+      <point x="2917.702083333334" y="1256.0" />
+      <point x="2908.6187500000005" y="1256.0" />
+      <point x="2908.6187500000005" y="784.0" />
+      <point x="2398.1812500000005" y="784.0" />
+      <point x="98.4375" y="180.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyDao.CompanyRowMapper" target="com.teamZero.app.Company">
+      <point x="61.75" y="-25.5" />
+      <point x="1208.4813002008034" y="804.0" />
+      <point x="1066.6377008032132" y="804.0" />
+      <point x="41.4375" y="102.5" />
+    </edge>
+    <edge source="com.teamZero.app.SecurityConfig" target="com.teamZero.app.RestEntryPoint">
+      <point x="-39.625" y="-70.0" />
+      <point x="3209.8563002008036" y="2106.0" />
+      <point x="3102.1481174698797" y="2106.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferController" target="com.teamZero.app.JobOfferService">
+      <point x="0.0" y="-81.0" />
+      <point x="240.51061746987943" y="2106.0" />
+      <point x="130.5" y="2106.0" />
+      <point x="-120.0" y="114.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyController" target="com.teamZero.app.UserRole">
+      <point x="101.66666666666652" y="-70.0" />
+      <point x="1236.4168674698794" y="2076.0" />
+      <point x="1313.7313002008034" y="2076.0" />
+      <point x="1313.7313002008034" y="1226.0" />
+      <point x="1862.117243975903" y="1226.0" />
+      <point x="-40.0" y="70.5" />
+    </edge>
+    <edge source="com.teamZero.app.GuestController" target="com.teamZero.app.UserService">
+      <point x="110.0" y="-136.5" />
+      <point x="852.250200803213" y="2086.0" />
+      <point x="1419.7313002008034" y="2086.0" />
+      <point x="-95.5" y="158.0" />
+    </edge>
+    <edge source="com.teamZero.app.UserService" target="com.teamZero.app.JobOfferDao">
+      <point x="-167.125" y="-158.0" />
+      <point x="1348.1063002008034" y="1620.0" />
+      <point x="491.9083835341369" y="1620.0" />
+      <point x="491.9083835341369" y="1256.0" />
+      <point x="515.3755773092362" y="1256.0" />
+      <point x="118.0" y="181.0" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferService" target="com.teamZero.app.JobOfferDao">
+      <point x="180.0" y="-114.5" />
+      <point x="430.5" y="1680.0" />
+      <point x="401.84395080321303" y="1680.0" />
+      <point x="401.84395080321303" y="1256.0" />
+      <point x="279.3755773092362" y="1256.0" />
+      <point x="-118.0" y="181.0" />
+    </edge>
+    <edge source="com.teamZero.app.UserRoleService" target="com.teamZero.app.UserRole">
+      <point x="-142.125" y="-70.0" />
+      <point x="2089.0231174698797" y="1570.0" />
+      <point x="1938.617243975903" y="1570.0" />
+      <point x="1938.617243975903" y="1256.0" />
+      <point x="1942.117243975903" y="1256.0" />
+      <point x="40.0" y="70.5" />
+    </edge>
+    <edge source="com.teamZero.app.UserController" target="com.teamZero.app.Company">
+      <point x="-126.0" y="-103.0" />
+      <point x="1543.2313002008034" y="2056.0" />
+      <point x="1291.7313002008034" y="2056.0" />
+      <point x="1291.7313002008034" y="774.0" />
+      <point x="1094.2627008032132" y="774.0" />
+      <point x="69.0625" y="102.5" />
+    </edge>
+    <edge source="com.teamZero.app.GuestController" target="com.teamZero.app.Company">
+      <point x="-36.666666666666515" y="-136.5" />
+      <point x="705.5835341365465" y="2036.0" />
+      <point x="588.6255773092361" y="2036.0" />
+      <point x="588.6255773092361" y="784.0" />
+      <point x="928.5127008032133" y="784.0" />
+      <point x="-96.6875" y="102.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyController" target="com.teamZero.app.CompanyService">
+      <point x="0.0" y="-70.0" />
+      <point x="1134.750200803213" y="2056.0" />
+      <point x="1110.7313002008034" y="2056.0" />
+      <point x="105.75" y="136.5" />
+    </edge>
+    <edge source="com.teamZero.app.AdminController" target="com.teamZero.app.UserRoleService">
+      <point x="74.0" y="-70.0" />
+      <point x="2107.6168674698797" y="2116.0" />
+      <point x="2231.1481174698797" y="2116.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="com.teamZero.app.UserRoleService" target="com.teamZero.app.UserRoleDao">
+      <point x="-47.375" y="-70.0" />
+      <point x="-39.25" y="81.5" />
+    </edge>
+    <edge source="com.teamZero.app.LoginService" target="com.teamZero.app.AppUserDao">
+      <point x="-53.25" y="-37.0" />
+      <point x="3990.8981174698797" y="1680.0" />
+      <point x="2902.797321428572" y="1680.0" />
+      <point x="89.42857142857133" y="137.0" />
+    </edge>
+    <edge source="com.teamZero.app.GuestController" target="com.teamZero.app.AppUser">
+      <point x="183.33333333333348" y="-136.5" />
+      <point x="925.5835341365465" y="2096.0" />
+      <point x="1716.7313002008034" y="2096.0" />
+      <point x="1716.7313002008034" y="1610.0" />
+      <point x="2004.617243975903" y="1610.0" />
+      <point x="2004.617243975903" y="804.0" />
+      <point x="2257.5562500000005" y="804.0" />
+      <point x="-42.1875" y="180.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyDao.CompanyRowMapper" target="com.teamZero.app.CompanyDao">
+      <point x="61.75" y="25.5" />
+      <point x="1208.4813002008034" y="1256.0" />
+      <point x="1191.64796686747" y="1256.0" />
+      <point x="106.66666666666652" y="-104.0" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyService" target="com.teamZero.app.Company">
+      <point x="-84.59999999999991" y="-136.5" />
+      <point x="920.3813002008035" y="1650.0" />
+      <point x="809.0229668674701" y="1650.0" />
+      <point x="809.0229668674701" y="804.0" />
+      <point x="983.7627008032133" y="804.0" />
+      <point x="-41.4375" y="102.5" />
+    </edge>
+    <edge source="com.teamZero.app.CustomAuthenticationProvider" target="com.teamZero.app.UserRoleDao">
+      <point x="-48.0" y="-70.5" />
+      <point x="2584.6481174698797" y="1610.0" />
+      <point x="2340.7731174698797" y="1610.0" />
+      <point x="117.75" y="81.5" />
+    </edge>
+    <edge source="com.teamZero.app.UserService" target="com.teamZero.app.UserRoleDao">
+      <point x="119.375" y="-158.0" />
+      <point x="1634.6063002008034" y="1630.0" />
+      <point x="2105.2731174698797" y="1630.0" />
+      <point x="-117.75" y="81.5" />
+    </edge>
+    <edge source="com.teamZero.app.UserController" target="com.teamZero.app.UserService">
+      <point x="-42.0" y="-103.0" />
+      <point x="1627.2313002008034" y="2086.0" />
+      <point x="1610.7313002008034" y="2086.0" />
+      <point x="95.5" y="158.0" />
+    </edge>
+    <edge source="com.teamZero.app.UserRoleDao" target="com.teamZero.app.UserRole">
+      <point x="0.0" y="-81.5" />
+      <point x="2223.0231174698797" y="1256.0" />
+      <point x="1962.117243975903" y="1256.0" />
+      <point x="60.0" y="70.5" />
+    </edge>
+    <edge source="com.teamZero.app.CompanyService" target="com.teamZero.app.CompanyDao">
+      <point x="0.0" y="-136.5" />
+      <point x="-80.0" y="104.0" />
+    </edge>
+    <edge source="com.teamZero.app.UserService" target="com.teamZero.app.Company">
+      <point x="-71.625" y="-158.0" />
+      <point x="1443.6063002008034" y="1630.0" />
+      <point x="1402.5438002008034" y="1630.0" />
+      <point x="1402.5438002008034" y="764.0" />
+      <point x="1121.8877008032132" y="764.0" />
+      <point x="96.6875" y="102.5" />
+    </edge>
+    <edge source="com.teamZero.app.AppUserDao.AppUserRowMapper" target="com.teamZero.app.AppUserDao">
+      <point x="60.0" y="25.5" />
+      <point x="2838.1187500000005" y="1256.0" />
+      <point x="2813.3687500000005" y="1256.0" />
+      <point x="0.0" y="-137.0" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferDao" target="com.teamZero.app.JobOfferDao.JobOfferRowMapper">
+      <point x="0.0" y="-181.0" />
+      <point x="397.3755773092362" y="814.0" />
+      <point x="373.6255773092362" y="814.0" />
+      <point x="-60.0" y="25.5" />
+    </edge>
+    <edge source="com.teamZero.app.JobOfferDao" target="com.teamZero.app.JobOffer">
+      <point x="-118.0" y="-181.0" />
+      <point x="279.3755773092362" y="814.0" />
+      <point x="303.1255773092362" y="814.0" />
+      <point x="303.1255773092362" y="353.0" />
+      <point x="387.625" y="353.0" />
+      <point x="-26.875" y="146.5" />
+    </edge>
+    <edge source="com.teamZero.app.UserController" target="com.teamZero.app.AppUser">
+      <point x="126.0" y="-103.0" />
+      <point x="1795.2313002008034" y="2116.0" />
+      <point x="1914.4606174698797" y="2116.0" />
+      <point x="1914.4606174698797" y="1620.0" />
+      <point x="2053.585993975903" y="1620.0" />
+      <point x="2053.585993975903" y="814.0" />
+      <point x="2285.6812500000005" y="814.0" />
+      <point x="-14.0625" y="180.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.20000000000000004" x="2120.0" y="2141.833333333333" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
