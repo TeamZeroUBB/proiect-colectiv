@@ -124,7 +124,7 @@ public class JobOfferDao {
         parameters.put("salary", jobOffer.getSalary());
 
         jdbcTemplate.update("UPDATE job_offer SET " +
-                "title = :title, description = :description, company_pk = :companyId, app_user_pk = :userId" +
+                "title = :title, description = :description, company_pk = :companyId, app_user_pk = :userId, " +
                 "email = :email, phone_number = :phoneNumber, address = :address," +
                 "city = :city, type = :type, no_of_applications = :numberOfApplications, " +
                 "salary = : salary WHERE job_offer_pk = :jobOfferId", parameters);
@@ -254,7 +254,6 @@ public class JobOfferDao {
             jobOffer.setAddress(rs.getString("address"));
             jobOffer.setCity(rs.getString("city"));
             jobOffer.setType(rs.getString("type"));
-            jobOffer.setCreatedTimestamp(rs.getTimestamp("created_timestamp"));
             jobOffer.setSalary(rs.getInt("salary"));
 
             return jobOffer;
