@@ -1,5 +1,7 @@
 package com.teamZero.app.domain.job;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.sql.Timestamp;
 
 public class JobOffer {
@@ -19,9 +21,11 @@ public class JobOffer {
     private String type;
     private String city;
     private int numberOfApplications;
+
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
     private Timestamp createdTimestamp;
 
-
+    private int salary;
 
     public Timestamp getCreatedTimestamp() {
         return createdTimestamp;
@@ -117,5 +121,13 @@ public class JobOffer {
 
     public void setCompanyId(Long companyId) {
         this.companyId = companyId;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 }

@@ -2,3 +2,4 @@
 /target
 /web
 *.iml
+/bin/

@@ -4,3 +4,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/JobDb
     username: postgres
     password: postgres
+
+
+server:
+  address: 192.168.0.104
+  port: 8080
