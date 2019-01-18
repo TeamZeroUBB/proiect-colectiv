@@ -44,19 +44,20 @@ public class GuestController {
         }
     }
 
-    @GetMapping("/job-offers/filer")
+    @GetMapping("/job-offers/filter")
     public ResponseEntity<JobOfferList> filterOffers(
             @RequestParam(value = "start", defaultValue = "0") int start,
             @RequestParam(value = "limit", defaultValue = "15") int limit,
             @RequestParam(value = "startDate", defaultValue = "NaN") String startDate,
             @RequestParam(value = "endDate", defaultValue = "NaN") String endDate,
-            @RequestParam(value = "jobType", defaultValue = "NaN") String jobType
+            @RequestParam(value = "jobType", defaultValue = "NaN") String jobType,
+            @RequestParam(value = "startingSalary", defaultValue = "NaN") String startingSalary
     ){
 
         try{
 
             return ResponseEntity.status(200).body(
-                    jobOfferService.filterJobOffers(start, limit, startDate, endDate, jobType).get()
+                    jobOfferService.filterJobOffers(start, limit, startDate, endDate, jobType, startingSalary).get()
             );
 
         }catch (Exception e){
