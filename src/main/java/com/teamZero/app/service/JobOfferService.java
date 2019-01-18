@@ -65,10 +65,14 @@ public class JobOfferService{
 
 
     @Async
-    public CompletableFuture<JobOfferList> filterJobOffers(int start, int limit, String startDate, String endDate, String jobType){
+    public CompletableFuture<JobOfferList> filterJobOffers(int start, int limit,
+                                                           String startDate,
+                                                           String endDate,
+                                                           String jobType,
+                                                           String startingSalary){
 
 
-        List<JobOffer> jobOffers = jobOfferDao.filterJobOffers(startDate, endDate, jobType);
+        List<JobOffer> jobOffers = jobOfferDao.filterJobOffers(startDate, endDate, jobType, startingSalary);
 
         start = start < 0 ? 0 : start;
         start = start > jobOffers.size() ? jobOffers.size() - 1 : start;

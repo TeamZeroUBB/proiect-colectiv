@@ -21,7 +21,7 @@ public class JobOffer {
     private int numberOfApplications;
     private Timestamp createdTimestamp;
 
-
+    private int salary;
 
     public Timestamp getCreatedTimestamp() {
         return createdTimestamp;
@@ -117,5 +117,13 @@ public class JobOffer {
 
     public void setCompanyId(Long companyId) {
         this.companyId = companyId;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 }

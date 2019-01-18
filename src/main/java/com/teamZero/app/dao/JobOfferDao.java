@@ -91,13 +91,14 @@ public class JobOfferDao {
         parameters.addValue("city", jobOffer.getCity());
         parameters.addValue("type", jobOffer.getType());
         parameters.addValue("numberOfApplications", jobOffer.getNumberOfApplications());
+        parameters.addValue("salary", jobOffer.getSalary());
 
         parameters.addValue("createdTimestamp", new Timestamp(System.nanoTime()));
 
         jdbcTemplate.update("INSERT INTO job_offer VALUES(" +
                 ":title, :description, :userId, :companyId, " +
                 ":email, :phoneNumber, :address, " +
-                ":city, :type, :numberOfApplications, :createdTimestamp" +
+                ":city, :type, :numberOfApplications, :createdTimestamp, :salary" +
                 ")", parameters, keyHolder);
 
         jobOffer.setJobOfferId((Long) keyHolder.getKey());
@@ -120,11 +121,13 @@ public class JobOfferDao {
         parameters.put("city", jobOffer.getCity());
         parameters.put("type", jobOffer.getType());
         parameters.put("numberOfApplications", jobOffer.getNumberOfApplications());
+        parameters.put("salary", jobOffer.getSalary());
 
         jdbcTemplate.update("UPDATE job_offer SET " +
                 "title = :title, description = :description, company_pk = :companyId, app_user_pk = :userId" +
                 "email = :email, phone_number = :phoneNumber, address = :address," +
-                "city = :city, type = :type, no_of_applications = :numberOfApplications WHERE job_offer_pk = :jobOfferId", parameters);
+                "city = :city, type = :type, no_of_applications = :numberOfApplications, " +
+                "salary = : salary WHERE job_offer_pk = :jobOfferId", parameters);
     }
 
     public void delete(Long jobOfferId){
@@ -137,34 +140,49 @@ public class JobOfferDao {
     }
 
 
-    public List<JobOffer> filterJobOffers(String startDate, String endDate, String jobType) {
+    public List<JobOffer> filterJobOffers(
+            String startDate,
+            String endDate,
+            String jobType,
+            String startSalary) {
 
         boolean whereIsSet = false;
 
-        String codition = "";
+        String condition = "";
 
         if (!startDate.equals("NaN")) {
             whereIsSet = true;
-            codition += "\n WHERE created_timestamp >= :startDate";
+            condition += "\n WHERE created_timestamp >= :startDate";
         }
 
         if (!endDate.equals("NaN")) {
 
             if (whereIsSet) {
-                codition += "\n AND created_timestamp <= :endDate";
+                condition += "\n AND created_timestamp <= :endDate";
             } else {
-                codition += "\n WHERE created_timestamp <= :endDate";
+                condition += "\n WHERE created_timestamp <= :endDate";
                 whereIsSet = true;
             }
         }
 
         if (!jobType.equals("NaN")){
             if (whereIsSet) {
-                codition += "\n AND jobType = :jobType";
+                condition += "\n AND jobType = :jobType";
             } else {
-                codition += "\n WHERE jobType = :jobType";
+                condition += "\n WHERE jobType = :jobType";
                 whereIsSet = true;
             }
+        }
+
+        if (!startSalary.equals("NaN")){
+
+            if (whereIsSet){
+                condition += "\n AND salary >= :startSalary";
+            }else {
+                condition += "\n WHERE salary >= :startSalary";
+                whereIsSet = true;
+            }
+
         }
 
         Map<String, Object> parameters = new HashMap<>();
@@ -172,8 +190,9 @@ public class JobOfferDao {
         parameters.put("starDate", startDate);
         parameters.put("endDate" , endDate);
         parameters.put("jobType" , jobType);
+        parameters.put("startSalary", Integer.parseInt(startSalary));
 
-        String query = "SELECT * FROM job_offer" + codition;
+        String query = "SELECT * FROM job_offer" + condition;
 
         return jdbcTemplate.query(query, parameters, new JobOfferRowMapper());
 
@@ -236,6 +255,7 @@ public class JobOfferDao {
             jobOffer.setCity(rs.getString("city"));
             jobOffer.setType(rs.getString("type"));
             jobOffer.setCreatedTimestamp(rs.getTimestamp("created_timestamp"));
+            jobOffer.setSalary(rs.getInt("salary"));
 
             return jobOffer;
         }
