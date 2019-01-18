@@ -8,37 +8,43 @@ const defaultJobs = [
         id: 1,
         title: "Title1",
         description: "Description1",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
+        userId: 50,
     },
     {
         id: 2,
         title: "Title2",
         description: "Description2",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
+        userId: 50,
     },
     {
         id: 3,
         title: "Title3",
         description: "Description3",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
+        userId: 50,
     },
     {
         id: 4,
         title: "Title4",
         description: "Description4",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
+        userId: 50,
     },
     {
-        id:5,
+        id: 5,
         title: "Title5",
         description: "Description5",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
+        userId: 50,
     },
     {
-        id:6,
+        id: 6,
         title: "Title6",
         description: "Description6",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
+        userId: 50,
     }
 ];
 export default class JobsPage extends Component {

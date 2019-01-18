@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router , Route} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import "./JobsComponent.css";
 import Modal from "../Modal/Modal";
+
 export default class JobsComponent extends Component {
     constructor(props) {
         super(props);
@@ -11,7 +15,7 @@ export default class JobsComponent extends Component {
 
     jobOfferClickHandler = () => {
         this.setState({
-            showModal: true
+          showModal: true
         })
     };
 
@@ -29,6 +33,14 @@ export default class JobsComponent extends Component {
 
     render() {
         const job = this.props.job;
+
+        // if (this.state.showModal) {
+        //   return <Route
+        //     path='/job'
+        //     render={(job) => <JobDetailsPage job={job}/>}
+        //   />;
+        // }
+
         return (
             <div id="jobOfferContainer">
                 <div id="deleteJob">
@@ -36,6 +48,7 @@ export default class JobsComponent extends Component {
                 </div>
                 <div id="jobImage"><img src={job.image}/></div>
                 <div id="jobTitle" onClick={this.jobOfferClickHandler}>{job.title}</div>
+                <div id="userId" onClick={this.userClickHandler}><Link to={`/user/${job.userId}`}>User: {job.userId}</Link></div>
                 <div id="jobDescription">{job.description}</div>
                 {this.state.showModal &&
                 <Modal

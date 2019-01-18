@@ -9,6 +9,7 @@ import axios from 'axios';
 import { apiUrl } from './constants';
 import RegisterSuccess from './pages/Login Page/SubLogins/RegisterSuccess/RegisterSuccess';
 import JobsPage from "./pages/Jobs/JobsPage";
+import UserDetailsPage from "./pages/User Page/UserDetailsPage/UserDetailsPage";
 
 //base url for ajax calls
 axios.defaults.baseURL = apiUrl;
@@ -25,6 +26,7 @@ class App extends Component {
                     <Route path="/login" component={LoginPage} />
                     <Route path="/signupsuccess" component={RegisterSuccess} />
                     <Route path="/jobs" component={JobsPage}/>
+                    <Route path="/user/:userId" component={UserDetailsPage}/>
                 </div>
             </Router>
         );
