@@ -35,7 +35,7 @@ class Navigator extends Component {
 					<div class="menu-flags">
                         <ReactFlagsSelect
                             countries={["US", "RO", "DE"]}
-                            customLabels={{"US": "EN","DE": "DE","RO": "RO"}}
+                            customLabels={{"US": "English","DE": "German","RO": "Romanian"}}
                             defaultCountry="US"
                             placeholder="Select Language"
                             onSelect={this.onSelectFlag}/>
