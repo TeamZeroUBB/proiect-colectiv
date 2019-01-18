@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as ReactModal from 'react-modal';
 import "./Modal.css";
 import Input from "../common/Input/Input";
-import {ControlLabel, FormControl, FormGroup} from "react-bootstrap";
+import {Button, ControlLabel, FormControl, FormGroup} from "react-bootstrap";
 
 export default class Modal extends Component {
     constructor (props) {
@@ -48,9 +48,79 @@ export default class Modal extends Component {
     };
 
     handleTitleChange = (e) => {
+        console.log(e.target.value);
         this.setState({
             jobTitle: e.target.value
         })
+    };
+
+    getViewWithoutEditMode = (job) => {
+        return (<div id="jobOfferModalContainer">
+            <div id="jobDetailsModal">
+                <div id="jobTitleModal">
+                    <div id="jobTitle">{job.title}</div>
+                    <div id="jobType">{job.type}</div>
+                </div>
+                <div id="jobDescription">
+                    {job.description}
+                </div>
+            </div>
+            <div id="jobContactDetailsModal">
+                <div id="jobImageModal">
+                    {/*TODO Update image link*/}
+                    {!this.state.isEditMode &&
+                    <img src={"https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"}/>}
+                    {this.state.isEditMode &&
+                    <img src={"https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"}/>}
+                </div>
+                <div id="jobContactDetailsSubContainer">
+                    <div className="jobContact">{job.phoneNumber}</div>
+                    <div className="jobContact">{job.email}</div>
+                    <div className="jobContact">{job.address}</div>
+                    <div id="applyButton">
+                        <Button bsStyle="primary">Apply</Button>
+                    </div>
+                </div>
+            </div>
+        </div>)
+    };
+
+    getViewEditMode = (job) => {
+        return (<div id="jobOfferModalContainer">
+            <div id="jobDetailsModal">
+                <div id="jobTitleModal">
+                    <div id="jobTitle">
+                        <FormControl
+                            type="text"
+                            value={this.state.jobTitle}
+                            placeholder="Enter text"
+                            onChange={this.handleTitleChange}
+                        />
+                    </div>
+                    <div id="jobType">{job.type}</div>
+                </div>
+                <div id="jobDescription">
+                    {job.description}
+                </div>
+            </div>
+            <div id="jobContactDetailsModal">
+                <div id="jobImageModal">
+                    {/*TODO Update image link*/}
+                    {!this.state.isEditMode &&
+                    <img src={"https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"}/>}
+                    {this.state.isEditMode &&
+                    <img src={"https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"}/>}
+                </div>
+                <div id="jobContactDetailsSubContainer">
+                    <div className="jobContact">{job.phoneNumber}</div>
+                    <div className="jobContact">{job.email}</div>
+                    <div className="jobContact">{job.address}</div>
+                    <div id="applyButton">
+                        <Button bsStyle="primary">Apply</Button>
+                    </div>
+                </div>
+            </div>
+        </div>)
     };
 
     render () {
@@ -71,7 +141,7 @@ export default class Modal extends Component {
                         content: {
                             position: 'absolute',
                             top: '40px',
-                            left: '35%',
+                            left: '20%',
                             right: '40px',
                             bottom: '40px',
                             border: '1px solid #ccc',
@@ -81,7 +151,7 @@ export default class Modal extends Component {
                             borderRadius: '4px',
                             outline: 'none',
                             padding: '0px',
-                            width: '30%'
+                            width: '60%'
                         }
                     }}
                 >
@@ -94,22 +164,8 @@ export default class Modal extends Component {
                             <img onClick={this.handleCloseModal} src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDUxMCA1MTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMCA1MTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iY2FuY2VsIj4KCQk8cGF0aCBkPSJNMjU1LDBDMTE0Ljc1LDAsMCwxMTQuNzUsMCwyNTVzMTE0Ljc1LDI1NSwyNTUsMjU1czI1NS0xMTQuNzUsMjU1LTI1NVMzOTUuMjUsMCwyNTUsMHogTTM4Mi41LDM0Ni44bC0zNS43LDM1LjcgICAgTDI1NSwyOTAuN2wtOTEuOCw5MS44bC0zNS43LTM1LjdsOTEuOC05MS44bC05MS44LTkxLjhsMzUuNy0zNS43bDkxLjgsOTEuOGw5MS44LTkxLjhsMzUuNywzNS43TDI5MC43LDI1NUwzODIuNSwzNDYuOHoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
                         </div>
                     </div>
-                    <div id="jobOfferModalContainer">
-                        <div id="jobImage">
-                            {!this.state.isEditMode && <img src={this.state.jobImage}/>}
-                            {this.state.isEditMode && <img src={this.state.jobImage}/>}
-                        </div>
-                        <div id="jobTitle" onClick={this.jobOfferClickHandler}>
-                            {!this.state.isEditMode && this.state.jobTitle}
-                            {this.state.isEditMode && <Input onChange={this.handleTitleChange} value={this.state.jobTitle} id="titleInput" inputType="input" labelName="Title" type="text" />}
-                        </div>
-                        <div id="jobDescription">
-                            {!this.state.isEditMode && this.state.jobDescription}
-                            {this.state.isEditMode && (<FormGroup controlId="formControlsTextarea">
-                                <FormControl onChange={this.handleDescriptionChange} value={this.state.jobDescription} id="descriptionTextArea" componentClass="textarea" placeholder="Job Description" />
-                            </FormGroup>)}
-                        </div>
-                    </div>
+                    {!this.state.isEditMode && this.getViewWithoutEditMode(job)}
+                    {this.state.isEditMode && this.getViewEditMode(job)}
                 </ReactModal>
             </div>
         );
