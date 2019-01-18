@@ -4,6 +4,9 @@ import JobsSubContainer from "./JobsSubContainer/JobsSubContainer";
 import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {JobRepository} from "../../repository/JobRepository";
+import Navigator from "../../components/Navigator/Navigator";
+import i18n from '../../i18n'
+import {Trans} from "react-i18next";
 const defaultJobs = [
     {
         id: 1,
@@ -124,26 +127,7 @@ export default class JobsPage extends Component {
     render() {
         return (
             <div id="mainPage">
-                <Navbar inverse>
-                    <Navbar.Header>
-                        <Navbar.Brand>
-                            <Link to="/jobs">Team Zero Jobs</Link>
-                        </Navbar.Brand>
-                        <Navbar.Toggle />
-                    </Navbar.Header>
-                    <Navbar.Collapse>
-                        <Navbar.Form pullLeft>
-                            <FormGroup id="searchBar">
-                                <FormControl value={this.state.searchValue} onChange={this.filterJobs} type="text" placeholder="Search" />
-                            </FormGroup>{' '}
-                        </Navbar.Form>
-                        <Nav pullRight>
-                            <NavItem eventKey={1} href="#">
-                                Welcome, {this.state.userName}
-                            </NavItem>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
+                <Navigator />
                 <div id="jobsContainer">
                     {this.createSubContainers()}
                 </div>

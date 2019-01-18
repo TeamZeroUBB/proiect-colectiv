@@ -7,13 +7,13 @@ import translationDE from './locales/de/translation'
 
 // the translations
 const resources = {
-    en: {
+    US: {
         translation: translationEN
     },
-    ro: {
+    RO: {
         translation: translationRO
     },
-    de: {
+    DE: {
         translation: translationDE
     }
 };
@@ -22,7 +22,7 @@ i18n
     .use(reactI18nextModule) // passes i18n down to react-i18next
     .init({
         resources,
-        lng: "en",
+        lng: "US",
 
         keySeparator: false, // we do not use keys in form messages.welcome
 
