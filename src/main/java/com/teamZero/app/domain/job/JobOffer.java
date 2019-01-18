@@ -1,5 +1,7 @@
 package com.teamZero.app.domain.job;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.sql.Timestamp;
 
 public class JobOffer {
@@ -19,6 +21,8 @@ public class JobOffer {
     private String type;
     private String city;
     private int numberOfApplications;
+
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss.SS")
     private Timestamp createdTimestamp;
 
     private int salary;
