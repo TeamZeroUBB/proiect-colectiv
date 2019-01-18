@@ -22,7 +22,7 @@ public class JobOffer {
     private String city;
     private int numberOfApplications;
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss.SS")
     private Timestamp createdTimestamp;
 
     private int salary;
