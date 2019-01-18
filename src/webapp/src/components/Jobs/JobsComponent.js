@@ -15,7 +15,7 @@ export default class JobsComponent extends Component {
 
     jobOfferClickHandler = () => {
         this.setState({
-          showModal: true
+            showModal: true
         })
     };
 
@@ -33,13 +33,6 @@ export default class JobsComponent extends Component {
 
     render() {
         const job = this.props.job;
-
-        // if (this.state.showModal) {
-        //   return <Route
-        //     path='/job'
-        //     render={(job) => <JobDetailsPage job={job}/>}
-        //   />;
-        // }
 
         return (
             <div id="jobOfferContainer">
