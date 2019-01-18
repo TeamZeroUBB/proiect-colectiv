@@ -6,12 +6,13 @@ import './Navigator.css';
 import ReactFlagsSelect from "react-flags-select";
 import 'react-flags-select/css/react-flags-select.css';
 import i18n from "../../i18n";
+import SearchBar from "../SearchBar/SearchBar";
 
 class Navigator extends Component {
 
     onSelectFlag = (countryCode) => {
         i18n.changeLanguage(countryCode, (err, t) => {
-            if (err) return console.log('something went wrong loading', err);
+            if (err) return
         });
     };
 
@@ -20,6 +21,7 @@ class Navigator extends Component {
             <div className="navi">
                 <div className="navi-left">
                     <div className="navi-logo" />
+                    {this.props.searchCallback && <SearchBar searchCallback={this.props.searchCallback}/>}
                 </div>
 
                 <div className="navi-right">

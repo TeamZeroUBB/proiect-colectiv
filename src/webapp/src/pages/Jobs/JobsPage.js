@@ -85,8 +85,7 @@ export default class JobsPage extends Component {
         return jobs;
     }
     //TODO link to back-end
-    filterJobs = (e) => {
-        const searchValue = e.target.value;
+    filterJobs = (searchValue) => {
         this.setState({
             jobs: defaultJobs.filter(job => job.title.includes(searchValue)),
             searchValue
@@ -127,7 +126,7 @@ export default class JobsPage extends Component {
     render() {
         return (
             <div id="mainPage">
-                <Navigator />
+                <Navigator searchCallback={this.filterJobs}/>
                 <div id="jobsContainer">
                     {this.createSubContainers()}
                 </div>

@@ -1,6 +1,7 @@
 .navi{
 	display: flex;
 	flex-direction: row;
+    height: 50px;
 }
 
 .navi div{
