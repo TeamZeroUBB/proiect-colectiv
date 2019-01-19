@@ -16,7 +16,7 @@ class PostLoader extends Component {
 	}
 
 	componentDidMount(){
-		axios.get(apiUrl + this.actionUrl)
+		axios.get(this.actionUrl)
 		.then((response)=>console.log(response))
 		.catch((error)=>console.log("An error has occurred while trying to get: " + apiUrl + this.actionUrl + "\nThe error is:", error))
 	}
