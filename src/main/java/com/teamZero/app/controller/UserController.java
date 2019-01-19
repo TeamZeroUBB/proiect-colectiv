@@ -44,19 +44,12 @@ public class UserController {
     }
 
 
-    @DeleteMapping("/delete/{userId}/{deletedUserId}")
-    public ResponseEntity deleteUser(@PathVariable Long userId, @PathVariable Long deletedUserId){
+    @DeleteMapping("/delete/{username}")
+    public ResponseEntity deleteUser(@PathVariable String username){
 
         try{
 
-            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-            if (! userId.equals(deletedUserId) && ! authentication.getAuthorities().contains(new SimpleGrantedAuthority(UserRole.ROLE_ADMIN.name()))){
-                return ResponseEntity.status(403).body("You do not have the appropriate credential to complete this action");
-            }
-
-
-            userService.deleteUser(userId);
+            userService.deleteUser(username);
             return ResponseEntity.status(204).body(null);
 
         }

@@ -56,11 +56,7 @@ public class JobOfferController {
     public ResponseEntity deleteJobOffer(@PathVariable Long userId, @PathVariable Long jobOfferId){
 
         try{
-
-            if (! isUserJobOfferPoster(userId, jobOfferId)){
-                return ResponseEntity.status(403).body("You do not have the appropriate credential to complete this action");
-            }
-
+            
             jobOfferService.deleteJobOffer(jobOfferId);
             return ResponseEntity.status(204).body(null);
 
@@ -72,21 +68,7 @@ public class JobOfferController {
     }
 
 
-    private boolean isUserJobOfferPoster(Long userId, Long jobOfferId) throws Exception {
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        if (authentication != null) {
-
-            if (!authentication.getAuthorities().contains(new SimpleGrantedAuthority(UserRole.ROLE_ADMIN.name()))) {
-
-                return jobOfferService.isUserJobOfferPoster(userId, jobOfferId).get();
-            } else {
-                return true;
-            }
-        }
-        return true;
-    }
 
 
 }
