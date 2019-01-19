@@ -1,7 +1,7 @@
 spring:
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/JobDb
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://ec2-54-75-245-94.eu-west-1.compute.amazonaws.com:5432/dc3fshjlcg6etm?user=tyfopglbzzzbwb&password=3d07767a56f5b6f6d60bbb2b051de028ed006dffcd9ce453acfe9ced4ff913af
+#    username: tyfopglbzzzbwb
+#    password: dc3fshjlcg6etm
 
