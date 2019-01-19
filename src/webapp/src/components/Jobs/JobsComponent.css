@@ -28,6 +28,10 @@
     cursor: pointer;
 }
 
+#userId {
+  cursor: pointer;
+}
+
 #jobDescription {
     /*background-color: tan;*/
     margin-top: 10px;
