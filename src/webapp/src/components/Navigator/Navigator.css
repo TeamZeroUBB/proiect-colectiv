@@ -1,16 +1,17 @@
 .navi{
 	display: flex;
 	flex-direction: row;
+    height: 50px;
 }
 
 .navi div{
 	text-align: center;
 	text-decoration: none;
-	background-color: rgba(48, 48, 48, 1);
 }
 
 .navi-left{
 	flex: 2 0 0;
+	background-color: rgba(48, 48, 48, 1);
 }
 
 .navi-logo{
@@ -27,10 +28,12 @@
 	flex: 1 0 0;
 	display: flex;
 	flex-direction: row;
+	background-color: rgba(48, 48, 48, 1);
+
 }
 
 .navi-button{
-	font-size: 22px;
+	font-size: 14px;
 	color: white;
 	outline: none;
 	padding: 14px 16px;
@@ -41,4 +44,17 @@
 
 .navi-right button:hover{
 	background-color: rgba(100, 100, 100, 1);
+}
+.selected--flag--option {
+	color: white;
+}
+.menu-flags{
+	margin-top: 10px;
+}
+.country-flag img {
+	vertical-align: unset;
+}
+
+.flag-option .has-label{
+	background-color:white;
 }
