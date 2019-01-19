@@ -59,6 +59,7 @@
     text-align: right;
     height: 8%;
     flex: 1;
+    margin-bottom: 3px;
 }
 #deleteJob img{
     margin-top: 2px;

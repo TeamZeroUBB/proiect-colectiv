@@ -3,6 +3,8 @@ import * as ReactModal from 'react-modal';
 import "./Modal.css";
 import Input from "../common/Input/Input";
 import {Button, ControlLabel, FormControl, FormGroup} from "react-bootstrap";
+import {typeToPicture} from "../Jobs/JobsComponent";
+import i18n from '../../i18n';
 
 export default class Modal extends Component {
     constructor (props) {
@@ -12,7 +14,11 @@ export default class Modal extends Component {
             isEditMode: false,
             jobImage: job.image,
             jobTitle: job.title,
-            jobDescription: job.description
+            jobDescription: job.description,
+            jobType: job.type,
+            jobAddress: job.address,
+            jobPhoneNumber: job.phoneNumber,
+            jobEmail: job.email
         }
     }
 
@@ -33,24 +39,19 @@ export default class Modal extends Component {
         });
         const oldJob = this.props.job;
         const newJob = {
-            id: oldJob.id,
             title: this.state.jobTitle,
             description: this.state.jobDescription,
-            image: oldJob.image
+            type: this.state.jobType,
+            address: this.state.jobAddress,
+            phoneNumber: this.state.jobPhoneNumber,
+            email: this.state.jobEmail
         };
-        saveCallback(newJob);
+        saveCallback(Object.assign({}, oldJob, newJob));
     };
 
-    handleDescriptionChange = (e) =>{
+    handleFieldInputChange = (e, fieldType) => {
         this.setState({
-            jobDescription: e.target.value
-        });
-    };
-
-    handleTitleChange = (e) => {
-        console.log(e.target.value);
-        this.setState({
-            jobTitle: e.target.value
+            [fieldType] : e.target.value
         })
     };
 
@@ -58,27 +59,23 @@ export default class Modal extends Component {
         return (<div id="jobOfferModalContainer">
             <div id="jobDetailsModal">
                 <div id="jobTitleModal">
-                    <div id="jobTitle">{job.title}</div>
-                    <div id="jobType">{job.type}</div>
+                    <div id="jobTitle">{this.state.jobTitle}</div>
+                    <div id="jobType">{this.state.jobType}</div>
                 </div>
                 <div id="jobDescription">
-                    {job.description}
+                    {this.state.jobDescription}
                 </div>
             </div>
             <div id="jobContactDetailsModal">
                 <div id="jobImageModal">
-                    {/*TODO Update image link*/}
-                    {!this.state.isEditMode &&
-                    <img src={"https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"}/>}
-                    {this.state.isEditMode &&
-                    <img src={"https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"}/>}
+                    <img src={typeToPicture[this.state.jobType]}/>
                 </div>
                 <div id="jobContactDetailsSubContainer">
-                    <div className="jobContact">{job.phoneNumber}</div>
-                    <div className="jobContact">{job.email}</div>
-                    <div className="jobContact">{job.address}</div>
+                    <div className="jobContact">{this.state.jobPhoneNumber}</div>
+                    <div className="jobContact">{this.state.jobEmail}</div>
+                    <div className="jobContact">{this.state.jobAddress}</div>
                     <div id="applyButton">
-                        <Button bsStyle="primary">Apply</Button>
+                        <Button bsStyle="primary">{i18n.t('applyLabel')}</Button>
                     </div>
                 </div>
             </div>
@@ -93,30 +90,60 @@ export default class Modal extends Component {
                         <FormControl
                             type="text"
                             value={this.state.jobTitle}
-                            placeholder="Enter text"
-                            onChange={this.handleTitleChange}
+                            placeholder="Enter job title"
+                            onChange={(e) => this.handleFieldInputChange(e, 'jobTitle')}
                         />
                     </div>
-                    <div id="jobType">{job.type}</div>
+                    <div id="jobType">
+                        <FormControl
+                            type="text"
+                            value={this.state.jobType}
+                            placeholder="Enter job type"
+                            onChange={(e) => this.handleFieldInputChange(e, 'jobType')}
+                        />
+                    </div>
                 </div>
                 <div id="jobDescription">
-                    {job.description}
+                    <FormControl
+                        type="text"
+                        componentClass="textarea"
+                        value={this.state.jobDescription}
+                        placeholder="Enter job description"
+                        onChange={(e) => this.handleFieldInputChange(e, 'jobDescription')}
+                    />
                 </div>
             </div>
             <div id="jobContactDetailsModal">
                 <div id="jobImageModal">
-                    {/*TODO Update image link*/}
-                    {!this.state.isEditMode &&
-                    <img src={"https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"}/>}
-                    {this.state.isEditMode &&
-                    <img src={"https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png"}/>}
+                    <img src={typeToPicture[this.state.jobType]}/>
                 </div>
                 <div id="jobContactDetailsSubContainer">
-                    <div className="jobContact">{job.phoneNumber}</div>
-                    <div className="jobContact">{job.email}</div>
-                    <div className="jobContact">{job.address}</div>
+                    <div className="jobContact">
+                        <FormControl
+                            type="text"
+                            value={this.state.jobPhoneNumber}
+                            placeholder="Enter job phone number"
+                            onChange={(e) => this.handleFieldInputChange(e, 'jobPhoneNumber')}
+                        />
+                    </div>
+                    <div className="jobContact">
+                        <FormControl
+                            type="text"
+                            value={this.state.jobEmail}
+                            placeholder="Enter job E-mail"
+                            onChange={(e) => this.handleFieldInputChange(e, 'jobEmail')}
+                        />
+                    </div>
+                    <div className="jobContact">
+                        <FormControl
+                            type="text"
+                            value={this.state.jobAddress}
+                            placeholder="Enter job address"
+                            onChange={(e) => this.handleFieldInputChange(e, 'jobAddress')}
+                        />
+                    </div>
                     <div id="applyButton">
-                        <Button bsStyle="primary">Apply</Button>
+                        <Button bsStyle="primary">{i18n.t('applyLabel')}</Button>
                     </div>
                 </div>
             </div>
