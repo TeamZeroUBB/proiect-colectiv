@@ -14,7 +14,7 @@
 }
 
 .navi-left{
-	flex: 2 0 0;
+	flex: 4 0 0;
 	background-color: rgba(48, 48, 48, 1);
 }
 
@@ -30,7 +30,7 @@
 }
 
 .navi-right{
-	flex: 1 0 0;
+	flex: 3 0 0;
 	display: flex;
 	flex-direction: row;
 	background-color: rgba(48, 48, 48, 1);
