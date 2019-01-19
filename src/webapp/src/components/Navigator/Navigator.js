@@ -11,6 +11,7 @@ import SearchBar from "../SearchBar/SearchBar";
 class Navigator extends Component {
 
     onSelectFlag = (countryCode) => {
+        window.localStorage.setItem('countryCode', countryCode);
         i18n.changeLanguage(countryCode, (err, t) => {
             if (err) return
         });
@@ -38,7 +39,7 @@ class Navigator extends Component {
                         <ReactFlagsSelect
                             countries={["US", "RO", "DE"]}
                             customLabels={{"US": "English","DE": "German","RO": "Romanian"}}
-                            defaultCountry="US"
+                            defaultCountry={window.localStorage.getItem('countryCode') || "US"}
                             placeholder="Select Language"
                             onSelect={this.onSelectFlag}/>
 					</div>

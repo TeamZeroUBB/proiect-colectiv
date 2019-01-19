@@ -167,7 +167,7 @@ export default class Modal extends Component {
                         },
                         content: {
                             position: 'absolute',
-                            top: '40px',
+                            top: '45px',
                             left: '20%',
                             right: '40px',
                             bottom: '40px',

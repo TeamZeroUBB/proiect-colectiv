@@ -42,4 +42,14 @@ export class JobRepository {
             })
             .catch(error => console.log(`Following error occurred when deleting: ${error}`));
     }
+
+    static filter(title){
+        return axios
+            .get(`http://${ip}/job-offers/filter?title=${title}`)
+            .then(response => {
+                console.log(response);
+                return response;
+            })
+            .catch(error => console.log(`Following error occurred when fetching: ${error}`));
+    }
 }

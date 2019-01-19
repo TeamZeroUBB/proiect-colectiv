@@ -4,3 +4,7 @@
     width: 45%;
     height: 50px;
 }
+
+.input-group-addon {
+    cursor: pointer;
+}
