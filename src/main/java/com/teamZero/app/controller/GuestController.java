@@ -51,13 +51,14 @@ public class GuestController {
             @RequestParam(value = "startDate", defaultValue = "NaN") String startDate,
             @RequestParam(value = "endDate", defaultValue = "NaN") String endDate,
             @RequestParam(value = "jobType", defaultValue = "NaN") String jobType,
-            @RequestParam(value = "startingSalary", defaultValue = "NaN") String startingSalary
+            @RequestParam(value = "startingSalary", defaultValue = "NaN") String startingSalary,
+            @RequestParam(value = "title", defaultValue = "NaN") String title
     ){
 
         try{
 
             return ResponseEntity.status(200).body(
-                    jobOfferService.filterJobOffers(start, limit, startDate, endDate, jobType, startingSalary).get()
+                    jobOfferService.filterJobOffers(start, limit, startDate, endDate, jobType, startingSalary, title).get()
             );
 
         }catch (Exception e){

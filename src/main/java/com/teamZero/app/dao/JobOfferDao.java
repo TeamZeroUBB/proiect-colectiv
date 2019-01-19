@@ -144,7 +144,8 @@ public class JobOfferDao {
             String startDate,
             String endDate,
             String jobType,
-            String startSalary) {
+            String startSalary,
+            String title) {
 
         boolean whereIsSet = false;
 
@@ -185,12 +186,24 @@ public class JobOfferDao {
 
         }
 
+        if (!title.equals("NaN")){
+
+            if (whereIsSet){
+                condition += "\n AND title like :title";
+            }else {
+                condition += "\n WHERE title like :title";
+                whereIsSet = true;
+            }
+
+        }
+
         Map<String, Object> parameters = new HashMap<>();
 
         parameters.put("starDate", startDate);
         parameters.put("endDate" , endDate);
         parameters.put("jobType" , jobType);
         parameters.put("startSalary", Integer.parseInt(startSalary));
+        parameters.put("title", "%" + title + "%");
 
         String query = "SELECT * FROM job_offer" + condition;
 
