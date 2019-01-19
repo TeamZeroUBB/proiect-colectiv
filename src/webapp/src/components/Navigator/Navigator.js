@@ -45,7 +45,7 @@ class Navigator extends Component {
                         {i18n.t('newOfferLabel')}
                     </a>
 
-					<div class="menu-flags">
+					<div className="menu-flags">
                         <ReactFlagsSelect
                             countries={["US", "RO", "DE"]}
                             customLabels={{"US": "English","DE": "German","RO": "Romanian"}}
