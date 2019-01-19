@@ -43,10 +43,6 @@ public class CompanyController {
 
         try{
 
-            if (! isUserCompanyCreator(userId, deletedCompanyId)){
-                return ResponseEntity.status(403).body("You do not have the appropriate credential to complete this action");
-            }
-
             companyService.delete(deletedCompanyId);
             return ResponseEntity.status(204).body(null);
 
@@ -56,26 +52,7 @@ public class CompanyController {
             return ResponseEntity.status(500).body(e.getMessage());
         }
     }
-
-
-
-
-
-    private boolean isUserCompanyCreator(Long userId, Long companyId) throws Exception {
-
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        if (authentication != null) {
-
-            if (!authentication.getAuthorities().contains(new SimpleGrantedAuthority(UserRole.ROLE_ADMIN.name()))) {
-
-                return companyService.isUserCompanyCreator(userId, companyId).get();
-            } else {
-                return true;
-            }
-        }
-        return true;
-    }
+    
 
 }
 
