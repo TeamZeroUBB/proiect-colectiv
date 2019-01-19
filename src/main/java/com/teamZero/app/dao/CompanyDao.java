@@ -89,6 +89,15 @@ public class CompanyDao {
 
     }
 
+    public void deleteByUserId(Long userId){
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("userId", userId);
+
+        jdbcTemplate.update("DELETE FROM company WHERE app_user_pk = :userId", parameters);
+
+    }
+
 
     //MAPPER--------------------------------------------------------------------------------------------
 
