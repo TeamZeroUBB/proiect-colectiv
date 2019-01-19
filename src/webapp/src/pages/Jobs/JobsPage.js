@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import "./JobsPage.css"
 import JobsSubContainer from "./JobsSubContainer/JobsSubContainer";
-import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
-import {Link} from "react-router-dom";
 import {JobRepository} from "../../repository/JobRepository";
 import Navigator from "../../components/Navigator/Navigator";
-import axios from 'axios';
+
 export default class JobsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             jobs: this.getAllJobsFromServer(),
-            searchValue: "",
             userName: "TestUserName",
         }
     }
@@ -21,7 +18,6 @@ export default class JobsPage extends Component {
             this.setState({
                 jobs: result && result.data && result.data.list
             });
-            console.log(this.state.jobs);
         })
     };
 
@@ -32,16 +28,20 @@ export default class JobsPage extends Component {
                 jobs.push(this.state.jobs[i]);
             }
         }
-
         return jobs;
     }
-    //TODO link to back-end
+
     filterJobs = (searchValue) => {
-        this.setState({
-            jobs: this.state.jobs.filter(job => job.title.includes(searchValue)),
-            searchValue
-        });
+        JobRepository
+            .filter(searchValue)
+            .then((result) => {
+                this.setState({
+                    jobs: result && result.data && result.data.list
+                });
+            });
+
     };
+    
     deleteCallback = (jobId) => {
         const jobs = this.state.jobs;
         console.log({jobId});
@@ -53,7 +53,7 @@ export default class JobsPage extends Component {
     
     saveCallback = (newJob) => {
         const jobs = this.state.jobs;
-        const index = jobs.findIndex(job => job.id === newJob.id);
+        const index = jobs.findIndex(job => job.jobOfferId === newJob.jobOfferId);
         jobs.splice(index, 1, newJob);
         this.setState({
             jobs: jobs
