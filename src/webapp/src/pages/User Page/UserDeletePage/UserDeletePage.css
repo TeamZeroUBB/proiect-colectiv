@@ -20,7 +20,9 @@
 }
 
 .badge {
-  width: 100%;
+  width: 62%;
+  margin-left: 19%;
+  border-radius: 5px !important;
   height: 20px !important;
   font-size: 12px !important;
 }
