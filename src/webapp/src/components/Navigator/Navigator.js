@@ -25,7 +25,9 @@ class Navigator extends Component {
         return (
             <div className="navi">
                 <div className="navi-left">
-                    <div className="navi-logo" />
+                    <a href='/jobs'>
+                        <div className="navi-logo" />
+                    </a>
                     {this.props.searchCallback && <SearchBar searchCallback={this.props.searchCallback}/>}
                 </div>
 
