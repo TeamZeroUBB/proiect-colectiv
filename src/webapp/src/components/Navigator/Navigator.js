@@ -17,6 +17,10 @@ class Navigator extends Component {
         });
     };
 
+    handleAddButtonClick = () => {
+        this.props.addClickedCallback && this.props.addClickedCallback();
+    };
+
     render() {
         return (
             <div className="navi">
@@ -30,10 +34,10 @@ class Navigator extends Component {
                         <FontAwesomeIcon className="fa-fw" icon={faUser} />
 						{i18n.t('myAccountLabel')}
                     </Link>
-                    <Link to="/login" className="navi-button navi-addpost">
+                    <a onClick={this.handleAddButtonClick} className="navi-button navi-addpost">
                         <FontAwesomeIcon className="fa-fw" icon={faPlus} />
                         Create a new offer
-                    </Link>
+                    </a>
 
 					<div class="menu-flags">
                         <ReactFlagsSelect

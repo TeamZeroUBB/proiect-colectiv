@@ -4,6 +4,10 @@
     height: 50px;
 }
 
+.navi-addpost{
+	cursor: pointer;
+}
+
 .navi div{
 	text-align: center;
 	text-decoration: none;

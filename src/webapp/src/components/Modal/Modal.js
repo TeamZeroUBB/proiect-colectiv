@@ -10,15 +10,16 @@ export default class Modal extends Component {
     constructor (props) {
         super(props);
         const job = this.props.job;
+        const isEditMode = this.props.isEditMode;
         this.state = {
-            isEditMode: false,
-            jobImage: job.image,
-            jobTitle: job.title,
-            jobDescription: job.description,
-            jobType: job.type,
-            jobAddress: job.address,
-            jobPhoneNumber: job.phoneNumber,
-            jobEmail: job.email
+            isEditMode: isEditMode || false,
+            jobImage: job.image || '',
+            jobTitle: job.title || '',
+            jobDescription: job.description || '',
+            jobType: job.type || '',
+            jobAddress: job.address || '',
+            jobPhoneNumber: job.phoneNumber || '',
+            jobEmail: job.email || ''
         }
     }
 
