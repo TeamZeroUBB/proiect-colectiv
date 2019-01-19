@@ -10,19 +10,16 @@ export default class JobsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            jobs: [],
+            jobs: this.getAllJobsFromServer(),
             searchValue: "",
             userName: "TestUserName",
-            allJobs: []
-        };
-        this.getAllJobsFromServer()
+        }
     }
 
     getAllJobsFromServer = () => {
         JobRepository.get().then(result => {
             this.setState({
-                jobs: result && result.data && result.data.list,
-                allJobs: result && result.data && result.data.list
+                jobs: result && result.data && result.data.list
             });
             console.log(this.state.jobs);
         })
@@ -41,7 +38,7 @@ export default class JobsPage extends Component {
     //TODO link to back-end
     filterJobs = (searchValue) => {
         this.setState({
-            jobs: this.state.allJobs.filter(job => job.title.includes(searchValue)),
+            jobs: this.state.jobs.filter(job => job.title.includes(searchValue)),
             searchValue
         });
     };
