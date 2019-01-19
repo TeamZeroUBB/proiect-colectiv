@@ -21,13 +21,13 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <!--<version>3.5.3</version>-->
                 <configuration>
-                    <!--<archive>-->
-                        <!--<manifest>-->
-                            <!--<addClasspath>true</addClasspath>-->
-                            <!--<classpathPrefix>lib/</classpathPrefix>-->
-                            <!--<mainClass>com.teamZero.app</mainClass>-->
-                        <!--</manifest>-->
-                    <!--</archive>-->
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>com.teamZero.app</mainClass>
+                        </manifest>
+                    </archive>
                     <source>8</source>
                     <target>8</target>
                 </configuration>
