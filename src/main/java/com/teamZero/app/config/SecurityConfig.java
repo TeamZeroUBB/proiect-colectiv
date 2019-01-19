@@ -46,13 +46,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling()
                     .authenticationEntryPoint(restEntryPoint)
 
-                //#TODO Somebody fix the security pls
-               //.and()
-               //.authorizeRequests()
-               //    .antMatchers("/user-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
-               //    .antMatchers("/job-offer-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
-               //    .antMatchers("/company-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
-               //    .antMatchers("/admin-service/**").hasAnyAuthority(UserRole.ROLE_ADMIN.name())
+               .and()
+               .authorizeRequests()
+                   .antMatchers("/user-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
+                   .antMatchers("/job-offer-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
+                   .antMatchers("/company-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
+                   .antMatchers("/admin-service/**").hasAnyAuthority(UserRole.ROLE_ADMIN.name())
 
                 .and()
                 .formLogin()
