@@ -4,6 +4,10 @@
     height: 50px;
 }
 
+.navi-addpost{
+	cursor: pointer;
+}
+
 .navi div{
 	text-align: center;
 	text-decoration: none;
@@ -19,8 +23,9 @@
 	left: 10%;
 	height: 100px;
 	width: 100px;
-	border-radius: 100%;
-	background: url("../../media/logo.png") no-repeat;
+	border-radius: 150%;
+	transform: scale(1.5);
+	background: url("http://www.pngall.com/wp-content/uploads/2016/07/Jobs-PNG-Picture.png") no-repeat;
 	background-size: 100%;
 }
 

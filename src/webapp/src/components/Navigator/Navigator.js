@@ -11,16 +11,23 @@ import SearchBar from "../SearchBar/SearchBar";
 class Navigator extends Component {
 
     onSelectFlag = (countryCode) => {
+        window.localStorage.setItem('countryCode', countryCode);
         i18n.changeLanguage(countryCode, (err, t) => {
             if (err) return
         });
+    };
+
+    handleAddButtonClick = () => {
+        this.props.addClickedCallback && this.props.addClickedCallback();
     };
 
     render() {
         return (
             <div className="navi">
                 <div className="navi-left">
-                    <div className="navi-logo" />
+                    <a href='/jobs'>
+                        <div className="navi-logo" />
+                    </a>
                     {this.props.searchCallback && <SearchBar searchCallback={this.props.searchCallback}/>}
                 </div>
 
@@ -33,16 +40,16 @@ class Navigator extends Component {
                         <FontAwesomeIcon className="fa-fw" icon={faUser} />
 						{i18n.t('myAccountLabel')}
                     </Link>
-                    <Link to="/login" className="navi-button navi-addpost">
+                    <a onClick={this.handleAddButtonClick} className="navi-button navi-addpost">
                         <FontAwesomeIcon className="fa-fw" icon={faPlus} />
-                        Create a new offer
-                    </Link>
+                        {i18n.t('newOfferLabel')}
+                    </a>
 
 					<div class="menu-flags">
                         <ReactFlagsSelect
                             countries={["US", "RO", "DE"]}
                             customLabels={{"US": "English","DE": "German","RO": "Romanian"}}
-                            defaultCountry="US"
+                            defaultCountry={window.localStorage.getItem('countryCode') || "US"}
                             placeholder="Select Language"
                             onSelect={this.onSelectFlag}/>
 					</div>
