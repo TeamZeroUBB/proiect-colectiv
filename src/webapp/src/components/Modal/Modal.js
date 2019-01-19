@@ -6,15 +6,17 @@ import {Button, ButtonToolbar, ControlLabel, DropdownButton, FormControl, FormGr
 import {typeToPicture} from "../Jobs/JobsComponent";
 import i18n from '../../i18n';
 
-const menuItems = [
-    <MenuItem eventKey="1">{i18n.t('technology')}</MenuItem>,
-    <MenuItem eventKey="2">{i18n.t('law')}</MenuItem>,
-    <MenuItem eventKey="3">{i18n.t('economy')}</MenuItem>,
-    <MenuItem eventKey="4">{i18n.t('education')}</MenuItem>,
-    <MenuItem eventKey="5">{i18n.t('artist')}</MenuItem>,
-];
+
 
 export default class Modal extends Component {
+    menuItems = () => {
+        return [
+            <MenuItem eventKey="1">{i18n.t('technology')}</MenuItem>,
+            <MenuItem eventKey="2">{i18n.t('law')}</MenuItem>,
+            <MenuItem eventKey="3">{i18n.t('economy')}</MenuItem>,
+            <MenuItem eventKey="4">{i18n.t('education')}</MenuItem>,
+            <MenuItem eventKey="5">{i18n.t('artist')}</MenuItem>,
+        ]};
     constructor (props) {
         super(props);
         const job = this.props.job;
@@ -70,7 +72,7 @@ export default class Modal extends Component {
             <div id="jobDetailsModal">
                 <div id="jobTitleModal">
                     <div id="jobTitle">{this.state.jobTitle}</div>
-                    <div id="jobType">{menuItems[this.state.jobType - 1].props.children}</div>
+                    <div id="jobType">{this.menuItems()[this.state.jobType - 1].props.children}</div>
                 </div>
                 <div id="jobDescription">
                     {this.state.jobDescription}
@@ -113,8 +115,8 @@ export default class Modal extends Component {
                     </div>
                     <div id="jobType">
                         <ButtonToolbar>
-                            <DropdownButton onSelect={this.selectedJobType} title={menuItems[this.state.jobType - 1] && menuItems[this.state.jobType - 1].props.children || i18n.t('typePlaceholderLabel')} id="dropdown-size-medium">
-                                {menuItems.map(val => val)}
+                            <DropdownButton onSelect={this.selectedJobType} title={this.menuItems()[this.state.jobType - 1] && this.menuItems()[this.state.jobType - 1].props.children || i18n.t('typePlaceholderLabel')} id="dropdown-size-medium">
+                                {this.menuItems()}
                             </DropdownButton>
                         </ButtonToolbar>
                     </div>
