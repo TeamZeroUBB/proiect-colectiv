@@ -1,60 +1,29 @@
 import React, { Component } from 'react';
 import "./JobsPage.css"
 import JobsSubContainer from "./JobsSubContainer/JobsSubContainer";
-import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
-import {Link} from "react-router-dom";
-const defaultJobs = [
-    {
-        id: 1,
-        title: "Title1",
-        description: "Description1",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        userId: 50,
-    },
-    {
-        id: 2,
-        title: "Title2",
-        description: "Description2",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        userId: 50,
-    },
-    {
-        id: 3,
-        title: "Title3",
-        description: "Description3",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        userId: 50,
-    },
-    {
-        id: 4,
-        title: "Title4",
-        description: "Description4",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        userId: 50,
-    },
-    {
-        id: 5,
-        title: "Title5",
-        description: "Description5",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        userId: 50,
-    },
-    {
-        id: 6,
-        title: "Title6",
-        description: "Description6",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        userId: 50,
-    }
-];
+import { Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+import axios from 'axios';
+
 export default class JobsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            jobs: defaultJobs,
+            jobs: [],
             searchValue: "",
             userName: "TestUserName"
         }
+
+        this.getJobs();
+    }
+
+    getJobs() {
+        axios.get(
+            axios.defaults.baseURL + 'job-offers'
+        ).then(results => {
+          this.setState( { jobs: results.data.list });
+        });
     }
 
     getJobsForContainer(index) {
@@ -64,13 +33,14 @@ export default class JobsPage extends Component {
                 jobs.push(this.state.jobs[i]);
             }
         }
+
         return jobs;
     }
     //TODO link to back-end
     filterJobs = (e) => {
         const searchValue = e.target.value;
         this.setState({
-            jobs: defaultJobs.filter(job => job.title.includes(searchValue)),
+            jobs: this.state.jobs.filter(job => job.title.includes(searchValue)),
             searchValue
         });
     };
