@@ -10,7 +10,7 @@ export default class JobsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            jobs: [],
+            jobs: null,
             searchValue: "",
             userName: "TestUserName"
         }
