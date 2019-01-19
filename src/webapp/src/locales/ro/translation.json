@@ -1,5 +1,17 @@
 {
   "myAccountLabel": "Contul meu",
   "searchPlaceholder": "Cauta...",
-  "applyLabel": "Aplica"
+  "applyLabel": "Aplica",
+  "titlePlaceholderLabel": "Introdu titlul...",
+  "typePlaceholderLabel": "Selecteaza un tip...",
+  "descriptionPlaceholderLabel": "Introdu descrierea..",
+  "phoneNumberPlaceholderLabel": "Introdu numarul de telefon...",
+  "emailPlaceholderLabel": "Introdu E-mailul...",
+  "addressPlaceholderLabel": "Introdu adresa...",
+  "newOfferLabel": "Creeaza un job nou",
+  "technology": "Tehnologie",
+  "law": "Drept",
+  "economy": "Economie",
+  "education": "Educatie",
+  "artist": "Artist"
 }

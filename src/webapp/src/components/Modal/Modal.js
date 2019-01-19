@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import * as ReactModal from 'react-modal';
 import "./Modal.css";
 import Input from "../common/Input/Input";
-import {Button, ControlLabel, FormControl, FormGroup} from "react-bootstrap";
+import {Button, ButtonToolbar, ControlLabel, DropdownButton, FormControl, FormGroup, MenuItem} from "react-bootstrap";
 import {typeToPicture} from "../Jobs/JobsComponent";
 import i18n from '../../i18n';
+
+const menuItems = [
+    <MenuItem eventKey="1">{i18n.t('technology')}</MenuItem>,
+    <MenuItem eventKey="2">{i18n.t('law')}</MenuItem>,
+    <MenuItem eventKey="3">{i18n.t('economy')}</MenuItem>,
+    <MenuItem eventKey="4">{i18n.t('education')}</MenuItem>,
+    <MenuItem eventKey="5">{i18n.t('artist')}</MenuItem>,
+];
 
 export default class Modal extends Component {
     constructor (props) {
@@ -13,10 +21,10 @@ export default class Modal extends Component {
         const isEditMode = this.props.isEditMode;
         this.state = {
             isEditMode: isEditMode || false,
-            jobImage: job.image || '',
+            jobImage: typeToPicture[job.type] || '',
             jobTitle: job.title || '',
             jobDescription: job.description || '',
-            jobType: job.type || '',
+            jobType: job.type || 'Select type...',
             jobAddress: job.address || '',
             jobPhoneNumber: job.phoneNumber || '',
             jobEmail: job.email || ''
@@ -45,7 +53,8 @@ export default class Modal extends Component {
             type: this.state.jobType,
             address: this.state.jobAddress,
             phoneNumber: this.state.jobPhoneNumber,
-            email: this.state.jobEmail
+            email: this.state.jobEmail,
+            image: this.state.jobImage
         };
         saveCallback(Object.assign({}, oldJob, newJob));
     };
@@ -61,7 +70,7 @@ export default class Modal extends Component {
             <div id="jobDetailsModal">
                 <div id="jobTitleModal">
                     <div id="jobTitle">{this.state.jobTitle}</div>
-                    <div id="jobType">{this.state.jobType}</div>
+                    <div id="jobType">{menuItems[this.state.jobType - 1].props.children}</div>
                 </div>
                 <div id="jobDescription">
                     {this.state.jobDescription}
@@ -69,7 +78,7 @@ export default class Modal extends Component {
             </div>
             <div id="jobContactDetailsModal">
                 <div id="jobImageModal">
-                    <img src={typeToPicture[this.state.jobType]}/>
+                    <img src={this.state.jobImage}/>
                 </div>
                 <div id="jobContactDetailsSubContainer">
                     <div className="jobContact">{this.state.jobPhoneNumber}</div>
@@ -83,6 +92,13 @@ export default class Modal extends Component {
         </div>)
     };
 
+    selectedJobType = (key, e) => {
+        this.setState({
+            jobType: key,
+            jobImage: typeToPicture[key]
+        })
+    };
+
     getViewEditMode = (job) => {
         return (<div id="jobOfferModalContainer">
             <div id="jobDetailsModal">
@@ -91,17 +107,16 @@ export default class Modal extends Component {
                         <FormControl
                             type="text"
                             value={this.state.jobTitle}
-                            placeholder="Enter job title"
+                            placeholder={i18n.t('titlePlaceholderLabel')}
                             onChange={(e) => this.handleFieldInputChange(e, 'jobTitle')}
                         />
                     </div>
                     <div id="jobType">
-                        <FormControl
-                            type="text"
-                            value={this.state.jobType}
-                            placeholder="Enter job type"
-                            onChange={(e) => this.handleFieldInputChange(e, 'jobType')}
-                        />
+                        <ButtonToolbar>
+                            <DropdownButton onSelect={this.selectedJobType} title={menuItems[this.state.jobType - 1] && menuItems[this.state.jobType - 1].props.children || i18n.t('typePlaceholderLabel')} id="dropdown-size-medium">
+                                {menuItems.map(val => val)}
+                            </DropdownButton>
+                        </ButtonToolbar>
                     </div>
                 </div>
                 <div id="jobDescription">
@@ -109,21 +124,21 @@ export default class Modal extends Component {
                         type="text"
                         componentClass="textarea"
                         value={this.state.jobDescription}
-                        placeholder="Enter job description"
+                        placeholder={i18n.t('descriptionPlaceholderLabel')}
                         onChange={(e) => this.handleFieldInputChange(e, 'jobDescription')}
                     />
                 </div>
             </div>
             <div id="jobContactDetailsModal">
                 <div id="jobImageModal">
-                    <img src={typeToPicture[this.state.jobType]}/>
+                    <img src={this.state.jobImage}/>
                 </div>
                 <div id="jobContactDetailsSubContainer">
                     <div className="jobContact">
                         <FormControl
                             type="text"
                             value={this.state.jobPhoneNumber}
-                            placeholder="Enter job phone number"
+                            placeholder={i18n.t('phoneNumberPlaceholderLabel')}
                             onChange={(e) => this.handleFieldInputChange(e, 'jobPhoneNumber')}
                         />
                     </div>
@@ -131,7 +146,7 @@ export default class Modal extends Component {
                         <FormControl
                             type="text"
                             value={this.state.jobEmail}
-                            placeholder="Enter job E-mail"
+                            placeholder={i18n.t('emailPlaceholderLabel')}
                             onChange={(e) => this.handleFieldInputChange(e, 'jobEmail')}
                         />
                     </div>
@@ -139,7 +154,7 @@ export default class Modal extends Component {
                         <FormControl
                             type="text"
                             value={this.state.jobAddress}
-                            placeholder="Enter job address"
+                            placeholder={i18n.t('addressPlaceholderLabel')}
                             onChange={(e) => this.handleFieldInputChange(e, 'jobAddress')}
                         />
                     </div>

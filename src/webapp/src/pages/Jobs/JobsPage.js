@@ -69,13 +69,21 @@ export default class JobsPage extends Component {
         ;
     };
 
-    //TODO update userId to current logged in userId
+    //TODO update userId to current logged in userId and same for companyId
     createCallback = (job) => {
+        const newJob = Object.assign(
+            {},
+            job,
+            {
+                userId: 1,
+                city: "thisFieldIsNotUsed",
+                companyId: 0
+            });
         JobRepository
-            .add(job)
+            .add(newJob)
             .then(response=>{
                 this.setState({
-                    jobs: [...this.state.jobs, Object.assign({}, job, { userId: 1})]
+                    jobs: [...this.state.jobs, newJob]
                 })
             });
     };

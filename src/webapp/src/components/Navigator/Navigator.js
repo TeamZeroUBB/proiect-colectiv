@@ -36,7 +36,7 @@ class Navigator extends Component {
                     </Link>
                     <a onClick={this.handleAddButtonClick} className="navi-button navi-addpost">
                         <FontAwesomeIcon className="fa-fw" icon={faPlus} />
-                        Create a new offer
+                        {i18n.t('newOfferLabel')}
                     </a>
 
 					<div class="menu-flags">
