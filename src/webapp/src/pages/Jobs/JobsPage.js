@@ -37,6 +37,17 @@ export default class JobsPage extends Component {
             console.log(this.state.jobs);
         })
     };
+	
+	getJobsForContainer(index) {
+        const jobs=[];
+        for(let i = index * 4 ; i < (index + 1) * 4; i++){
+            if(i < this.state.jobs.length) {
+                jobs.push(this.state.jobs[i]);
+            }
+        }
+
+        return jobs;
+}
 
 	//TODO link to back-end
 	filterJobs = (searchValue) => {
