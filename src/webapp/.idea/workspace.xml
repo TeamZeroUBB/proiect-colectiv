@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3aea5cab-d25d-409a-a6a7-ea25bbb8b0f6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Navigator/Navigator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigator/Navigator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchBar/SearchBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchBar/SearchBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigator/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigator/Navigator.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,7 +54,7 @@
         <counts>
           <entry key="css" value="3630" />
           <entry key="html" value="106" />
-          <entry key="js" value="12393" />
+          <entry key="js" value="13342" />
           <entry key="json" value="686" />
         </counts>
       </usages-collector>
@@ -63,7 +63,7 @@
           <entry key="CSS" value="3630" />
           <entry key="HTML" value="106" />
           <entry key="JSON" value="686" />
-          <entry key="JavaScript" value="12393" />
+          <entry key="JavaScript" value="13342" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -90,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Navigator/Navigator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+            <state relative-caret-position="407">
+              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -102,7 +102,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Navigator/Navigator.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
+            <state relative-caret-position="-168">
               <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
             </state>
           </provider>
@@ -117,7 +117,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SearchBar/SearchBar.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
@@ -143,11 +143,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="155" column="36" selection-start-line="155" selection-start-column="25" selection-end-line="155" selection-end-column="36" />
+            <state relative-caret-position="318">
+              <caret line="128" column="35" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -176,9 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>likeJob</find>
-      <find>i18next</find>
-      <find>Navigator</find>
       <find>img{</find>
       <find>job.im</find>
       <find>phone</find>
@@ -206,6 +203,9 @@
       <find>jobDetial</find>
       <find>menuItems</find>
       <find>jobContactDetailsSubContainer</find>
+      <find>class</find>
+      <find>validationState</find>
+      <find>showSave</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,12 +231,12 @@
         <option value="$PROJECT_DIR$/src/locales/ro/translation.json" />
         <option value="$PROJECT_DIR$/src/locales/de/translation.json" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/Modal/Modal.js" />
         <option value="$PROJECT_DIR$/src/components/Modal/Modal.css" />
         <option value="$PROJECT_DIR$/src/components/SearchBar/SearchBar.js" />
-        <option value="$PROJECT_DIR$/src/components/Navigator/Navigator.js" />
         <option value="$PROJECT_DIR$/src/components/Navigator/Navigator.css" />
         <option value="$PROJECT_DIR$/src/components/SearchBar/SearchBar.css" />
+        <option value="$PROJECT_DIR$/src/components/Navigator/Navigator.js" />
+        <option value="$PROJECT_DIR$/src/components/Modal/Modal.js" />
       </list>
     </option>
   </component>
@@ -461,7 +461,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55995000" />
+    <option name="totallyTimeSpent" value="58291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -702,16 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="155" column="36" selection-start-line="155" selection-start-column="25" selection-end-line="155" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -742,23 +732,6 @@
     <entry file="file://$PROJECT_DIR$/src/media/logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Navigator/Navigator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Navigator/Navigator.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SearchBar/SearchBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -770,6 +743,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navigator/Navigator.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navigator/Navigator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="128" column="35" selection-start-line="128" selection-start-column="35" selection-end-line="128" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
