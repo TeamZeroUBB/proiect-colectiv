@@ -7,8 +7,9 @@ export default class JobsSubContainer extends Component {
     }
 
     getJobsToRender = () => {
-        return this.props.jobs.map(job => {
+        return this.props.jobs.map((job, index, jobs) => {
             return (<JobsComponent
+                key={index}
                 job={job}
                 deleteCallback={this.props.deleteCallback}
                 saveCallback={this.props.saveCallback}

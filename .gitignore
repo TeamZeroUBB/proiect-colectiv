@@ -3,3 +3,4 @@
 /web
 *.iml
 /bin/
+/node_modules/

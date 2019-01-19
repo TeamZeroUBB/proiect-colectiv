@@ -10,6 +10,7 @@ import com.teamZero.app.service.JobOfferService;
 import com.teamZero.app.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +39,8 @@ public class GuestController {
         try{
             return ResponseEntity.status(200).body(jobOfferService.getJobOffers(start, limit).get());
 
-        }catch (Exception e){
+        }
+        catch (Exception e){
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.status(500).body(null);
         }
@@ -70,11 +72,16 @@ public class GuestController {
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<AppUser> getUser(@PathVariable Long userId){
+    public ResponseEntity getUser(@PathVariable Long userId){
 
         try{
             return ResponseEntity.status(200).body(userService.getUserById(userId).get());
         }
+
+        catch (EmptyResultDataAccessException e1){
+            return ResponseEntity.status(404).body("No user with the id: " + userId);
+        }
+
         catch (Exception e){
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.status(500).body(null);
@@ -82,11 +89,16 @@ public class GuestController {
     }
 
     @GetMapping("/company/{companyId}")
-    public ResponseEntity<Company> getCompanyByCompanyId(@PathVariable Long companyId){
+    public ResponseEntity getCompanyByCompanyId(@PathVariable Long companyId){
 
         try{
             return ResponseEntity.status(200).body(companyService.getCompanyByCompanyId(companyId).get());
         }
+
+        catch (EmptyResultDataAccessException e1){
+            return ResponseEntity.status(404).body("No company with the id: " + companyId);
+        }
+
         catch (Exception e){
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.status(500).body(null);
@@ -94,11 +106,16 @@ public class GuestController {
     }
 
     @GetMapping("/company-of-user/{userId}")
-    public ResponseEntity<Company> getCompanyByUserId(@PathVariable Long userId){
+    public ResponseEntity getCompanyByUserId(@PathVariable Long userId){
 
         try{
             return ResponseEntity.status(200).body(companyService.getCompanyByUserId(userId).get());
         }
+
+        catch (EmptyResultDataAccessException e1){
+            return ResponseEntity.status(404).body("No company with the user id: " + userId);
+        }
+
         catch (Exception e){
             LOGGER.error(e.getMessage(), e);
             return ResponseEntity.status(500).body(null);

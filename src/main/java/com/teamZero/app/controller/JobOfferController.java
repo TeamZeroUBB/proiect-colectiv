@@ -1,12 +1,8 @@
 package com.teamZero.app.controller;
 
-import com.teamZero.app.domain.Company;
 import com.teamZero.app.domain.job.JobOffer;
-import com.teamZero.app.domain.user.AppUser;
 import com.teamZero.app.domain.user.UserRole;
-import com.teamZero.app.service.CompanyService;
 import com.teamZero.app.service.JobOfferService;
-import com.teamZero.app.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +29,8 @@ public class JobOfferController {
             return ResponseEntity.status(200).body(jobOfferService.addJobOffer(jobOffer).get());
         }
         catch (Exception e){
+
+            LOGGER.error(e.getMessage(), e);
             return ResponseEntity.status(500).body(null);
         }
     }

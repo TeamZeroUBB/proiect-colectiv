@@ -3,10 +3,8 @@ package com.teamZero.app.service;
 import com.teamZero.app.dao.JobOfferDao;
 import com.teamZero.app.domain.job.JobOffer;
 import com.teamZero.app.dto.JobOfferList;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.List;

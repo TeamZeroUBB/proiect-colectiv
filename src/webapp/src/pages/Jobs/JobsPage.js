@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import "./JobsPage.css"
 import JobsSubContainer from "./JobsSubContainer/JobsSubContainer";
-import { Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
+import {Link} from "react-router-dom";
+import {JobRepository} from "../../repository/JobRepository";
 
 import axios from 'axios';
-
 export default class JobsPage extends Component {
     constructor(props) {
         super(props);
@@ -25,6 +25,16 @@ export default class JobsPage extends Component {
           this.setState( { jobs: results.data.list });
         });
     }
+
+
+    getAllJobsFromServer = () => {
+        JobRepository.get().then(result => {
+            this.setState({
+                jobs: result && result.data && result.data.list
+            });
+            console.log(this.state.jobs);
+        })
+    };
 
     getJobsForContainer(index) {
         const jobs=[];
@@ -58,7 +68,8 @@ export default class JobsPage extends Component {
         jobs.splice(index, 1, newJob);
         this.setState({
             jobs: jobs
-        })
+        });
+        JobRepository.update(newJob);
     };
 
     createSubContainers = () => {
@@ -66,6 +77,7 @@ export default class JobsPage extends Component {
         const subContainers = [];
         for(let i = 0; i < numberOfContainer; i++ ) {
             subContainers.push(<JobsSubContainer
+                key={i}
                 jobs={this.getJobsForContainer(i)}
                 deleteCallback={this.deleteCallback}
                 saveCallback={this.saveCallback}

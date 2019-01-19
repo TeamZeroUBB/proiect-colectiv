@@ -90,16 +90,16 @@ public class JobOfferDao {
         parameters.addValue("address", jobOffer.getAddress());
         parameters.addValue("city", jobOffer.getCity());
         parameters.addValue("type", jobOffer.getType());
-        parameters.addValue("numberOfApplications", jobOffer.getNumberOfApplications());
+        parameters.addValue("numberOfApplications", 0);
         parameters.addValue("salary", jobOffer.getSalary());
 
         parameters.addValue("createdTimestamp", new Timestamp(System.nanoTime()));
 
-        jdbcTemplate.update("INSERT INTO job_offer VALUES(" +
-                ":title, :description, :userId, :companyId, " +
-                ":email, :phoneNumber, :address, " +
-                ":city, :type, :numberOfApplications, :createdTimestamp, :salary" +
-                ")", parameters, keyHolder);
+        jdbcTemplate.update("INSERT INTO job_offer (title, description, app_user_pk, company_pk, email, phone_number, address, city, type, no_of_applications, created_timestamp, salary) VALUES(" +
+                ":title, :description, :userId, :companyId, :email, :phoneNumber, " +
+                ":address, :city, :type, " +
+                ":numberOfApplications, :createdTimestamp, :salary" +
+                ")", parameters, keyHolder, new String[]{"job_offer_pk"});
 
         jobOffer.setJobOfferId((Long) keyHolder.getKey());
 
@@ -124,7 +124,7 @@ public class JobOfferDao {
         parameters.put("salary", jobOffer.getSalary());
 
         jdbcTemplate.update("UPDATE job_offer SET " +
-                "title = :title, description = :description, company_pk = :companyId, app_user_pk = :userId" +
+                "title = :title, description = :description, company_pk = :companyId, app_user_pk = :userId, " +
                 "email = :email, phone_number = :phoneNumber, address = :address," +
                 "city = :city, type = :type, no_of_applications = :numberOfApplications, " +
                 "salary = : salary WHERE job_offer_pk = :jobOfferId", parameters);
@@ -254,7 +254,6 @@ public class JobOfferDao {
             jobOffer.setAddress(rs.getString("address"));
             jobOffer.setCity(rs.getString("city"));
             jobOffer.setType(rs.getString("type"));
-            jobOffer.setCreatedTimestamp(rs.getTimestamp("created_timestamp"));
             jobOffer.setSalary(rs.getInt("salary"));
 
             return jobOffer;
