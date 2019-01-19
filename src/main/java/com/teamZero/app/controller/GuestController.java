@@ -7,15 +7,21 @@ import com.teamZero.app.domain.user.AppUser;
 import com.teamZero.app.dto.JobOfferList;
 import com.teamZero.app.service.CompanyService;
 import com.teamZero.app.service.JobOfferService;
+import com.teamZero.app.service.LoginService;
 import com.teamZero.app.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class GuestController {
@@ -30,6 +36,9 @@ public class GuestController {
 
     @Resource
     private CompanyService companyService;
+
+    @Resource
+    private LoginService loginService;
 
     @GetMapping("/job-offers")
     public ResponseEntity<JobOfferList> getJobOffers(
@@ -129,6 +138,23 @@ public class GuestController {
         return ResponseEntity.status(200).body(jobOfferService.getAllJobTypes());
     }
 
+
+    @PostMapping("/login")
+    public ResponseEntity login(@RequestBody AppUser user) {
+
+        String username = user.getUsername();
+        String password = user.getPassword();
+
+        try{
+            AppUser appUser = loginService.authenticate(username, password);
+            return ResponseEntity.status(200).body(appUser);
+
+        }catch (Exception e){
+            LOGGER.error(e.getMessage(), e);
+            return ResponseEntity.status(500).body("Login failed");
+        }
+
+    }
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody AppUser appUser){

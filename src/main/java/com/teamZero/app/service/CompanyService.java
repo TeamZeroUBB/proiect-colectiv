@@ -27,7 +27,7 @@ public class CompanyService {
 
 
     private void addJobOffersToCompany(Company company){
-        company.setJobOffers(jobOfferDao.getJobOffersPostedByCompany(company.getCompanyId()));
+        company.setPostedJobOffers(jobOfferDao.getJobOffersPostedByCompany(company.getCompanyId()));
     }
 
 

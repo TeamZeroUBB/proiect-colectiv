@@ -25,8 +25,20 @@ public class AppUser implements Serializable {
 
     //The id of the company associated with this user;
     private Long companyId;
-
     private byte[] cv;
+    private boolean isAdmin;
+
+
+
+
+    public boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean admin) {
+        this.isAdmin = admin;
+    }
+
 
     public byte[] getCv() {
         return cv;

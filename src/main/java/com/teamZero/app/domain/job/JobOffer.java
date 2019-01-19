@@ -24,6 +24,7 @@ public class JobOffer {
 
     private int salary;
 
+
     public int getNumberOfApplications() {
         return numberOfApplications;
     }

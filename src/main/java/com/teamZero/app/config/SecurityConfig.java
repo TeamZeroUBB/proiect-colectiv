@@ -44,25 +44,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(new CorsFilter(), SessionManagementFilter.class)
                 .csrf().disable()
                 .exceptionHandling()
-                    .authenticationEntryPoint(restEntryPoint)
+                    .authenticationEntryPoint(restEntryPoint);
 
-               .and()
-               .authorizeRequests()
-                   .antMatchers("/user-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
-                   .antMatchers("/job-offer-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
-                   .antMatchers("/company-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
-                   .antMatchers("/admin-service/**").hasAnyAuthority(UserRole.ROLE_ADMIN.name())
-
-                .and()
-                .formLogin()
-                    .loginProcessingUrl("/login")
-                    .failureUrl("/login?error=true")
-                    .passwordParameter("password")
-                    .usernameParameter("username")
-                    .successHandler(authSuccessHandler)
-
-                .and()
-                .logout();
+               //.and()
+               //.authorizeRequests()
+               //    .antMatchers("/user-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
+               //    .antMatchers("/job-offer-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
+               //    .antMatchers("/company-service/**").hasAnyAuthority(UserRole.ROLE_USER.name(), UserRole.ROLE_ADMIN.name())
+               //    .antMatchers("/admin-service/**").hasAnyAuthority(UserRole.ROLE_ADMIN.name())
+//
+               // .and()
+               // .formLogin()
+               //     .loginProcessingUrl("/login")
+               //     .failureUrl("/login?error=true")
+               //     .passwordParameter("password")
+               //     .usernameParameter("username")
+               //     .successHandler(authSuccessHandler)
+//
+               // .and()
+               // .logout();
 
 
     }
