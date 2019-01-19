@@ -5,18 +5,15 @@ import com.teamZero.app.domain.user.UserRole;
 import com.teamZero.app.service.JobOfferService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
-@Controller
-@SpringBootApplication
+@RestController
 @RequestMapping("/job-offer-service")
 public class JobOfferController {
 

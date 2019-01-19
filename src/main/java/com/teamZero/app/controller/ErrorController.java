@@ -1,6 +1,5 @@
 package com.teamZero.app.controller;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 
 
 @Controller
-@SpringBootApplication
 @RequestMapping(path = "/")
 public class ErrorController {
 

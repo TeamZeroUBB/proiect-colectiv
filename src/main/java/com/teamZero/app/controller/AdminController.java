@@ -4,19 +4,15 @@ import com.teamZero.app.domain.user.UserRole;
 import com.teamZero.app.service.UserRoleService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
 
-//@RestController
+@RestController
 @RequestMapping("/admin-service")
-@Controller
-@SpringBootApplication
 public class AdminController {
 
     private static final Logger LOGGER = LogManager.getLogger(AdminController.class);
