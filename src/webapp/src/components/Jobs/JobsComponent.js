@@ -5,7 +5,7 @@ import "./JobsComponent.css";
 import Modal from "../Modal/Modal";
 
 //a dictionary with a default type
-var typeToPicture = new Proxy(
+export var typeToPicture = new Proxy(
 	{
 		"0": "https://www.insidescience.org/sites/default/files/5_heic1808a_crop.jpg",
 		"1": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/01/24/12/v2-cute-cat-picture.jpg?w968h681",
@@ -46,7 +46,7 @@ export default class JobsComponent extends Component {
 	deleteJob = () => {
 		const job = this.props.job;
 		const deleteCallback = this.props.deleteCallback;
-		deleteCallback(job.id);
+		deleteCallback(job.jobOfferId);
 	};
 
 	render() {
@@ -60,7 +60,7 @@ export default class JobsComponent extends Component {
 				<div id="jobImage"><img src={typeToPicture[job.type]} /></div>
 				<div id="jobTitle" onClick={this.jobOfferClickHandler}>{job.title}</div>
 				<div id="userId" onClick={this.userClickHandler}><Link to={`/user/${job.userId}`}>User: {job.userId}</Link></div>
-				<div id="jobDescription">{job.description}</div>
+				<div id="jobDescription">{job.phoneNumber}</div>
 				{this.state.showModal &&
 					<Modal
 						job={job}

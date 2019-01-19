@@ -33,9 +33,9 @@ export class JobRepository {
             .catch(error => console.log(`Following error occurred when updating: ${error}`));
     }
 
-    static delete(userId, jobId) {
+    static delete(jobId) {
         return axios
-            .put(`http://${ip}/job-offer-service/delete/${userId}/${jobId}`)
+            .delete(`http://${ip}/job-offer-service/delete/${jobId}`)
             .then(response => {
                 console.log(response);
                 return response;
