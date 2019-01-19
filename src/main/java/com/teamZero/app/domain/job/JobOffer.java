@@ -22,18 +22,8 @@ public class JobOffer {
     private String city;
     private int numberOfApplications;
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss.SS")
-    private Timestamp createdTimestamp;
-
     private int salary;
 
-    public Timestamp getCreatedTimestamp() {
-        return createdTimestamp;
-    }
-
-    public void setCreatedTimestamp(Timestamp createdTimestamp) {
-        this.createdTimestamp = createdTimestamp;
-    }
 
     public int getNumberOfApplications() {
         return numberOfApplications;

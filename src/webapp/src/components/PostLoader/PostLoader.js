@@ -8,7 +8,7 @@ class PostLoader extends Component {
 
 	constructor(props){
 		super(props);
-		
+
 		this.state = {
 			data: [],
 			isLoading: false

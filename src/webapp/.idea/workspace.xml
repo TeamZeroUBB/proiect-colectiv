@@ -2,16 +2,181 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3aea5cab-d25d-409a-a6a7-ea25bbb8b0f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SearchBar/SearchBar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SearchBar/SearchBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/alert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/alert.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/button.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/carousel.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/collapse.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/dropdown.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/index.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/modal.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/popover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/popover.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/scrollspy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/scrollspy.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/tab.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/tooltip.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/dist/util.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/alert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/popover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/scrollspy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/js/src/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_breadcrumb.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_button-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_carousel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_close.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_code.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_custom-forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_jumbotron.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_media.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_print.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_root.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_transitions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/bootstrap-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/bootstrap-reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_background-variant.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_border-radius.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_caret.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_gradients.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_grid-framework.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_hover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_image.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_nav-divider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_navbar-align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_reset-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_resize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_size.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_table-row.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_text-emphasis.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_text-hide.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_text-truncate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/mixins/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_align.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_background.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_borders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_embed.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_flex.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_float.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_position.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_screenreaders.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_sizing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_spacing.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../node_modules/bootstrap/scss/utilities/_visibility.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User Page/UserDetailsPage/UserDetailsPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/User Page/UserDetailsPage/UserDetailsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/config/auth/CustomAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/config/auth/CustomAuthenticationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/GuestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/GuestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/JobOfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/JobOfferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/dao/CompanyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/dao/CompanyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/dao/JobOfferDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/dao/JobOfferDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/domain/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/domain/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/domain/job/JobOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/domain/job/JobOffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/domain/user/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/domain/user/AppUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/service/CompanyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/service/JobOfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/service/JobOfferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/java/com/teamZero/app/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../main/java/com/teamZero/app/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigator/Navigator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigator/Navigator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigator/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigator/Navigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/de/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/de/translation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/en/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/en/translation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/ro/translation.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/ro/translation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Jobs/JobsPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Jobs/JobsPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Jobs/JobsComponent.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Jobs/JobsComponent.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Jobs/JobsComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Jobs/JobsComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostLoader/PostLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostLoader/PostLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Jobs/JobsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Jobs/JobsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Jobs/JobsSubContainer/JobsSubContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Jobs/JobsSubContainer/JobsSubContainer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,7 +226,7 @@
         <counts>
           <entry key="css" value="3157" />
           <entry key="html" value="92" />
-          <entry key="js" value="8930" />
+          <entry key="js" value="8956" />
           <entry key="json" value="143" />
         </counts>
       </usages-collector>
@@ -70,7 +235,7 @@
           <entry key="CSS" value="3157" />
           <entry key="HTML" value="92" />
           <entry key="JSON" value="143" />
-          <entry key="JavaScript" value="8930" />
+          <entry key="JavaScript" value="8956" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -82,11 +247,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/Jobs/JobsPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="87" column="29" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="29" />
+            <state relative-caret-position="80">
+              <caret line="63" column="63" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -95,28 +260,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Navigator/Navigator.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Jobs/JobsComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Navigator/Navigator.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/SearchBar/SearchBar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+            <state relative-caret-position="-442">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -125,37 +272,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/locales/de/translation.json">
+        <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            <state relative-caret-position="102">
+              <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/locales/en/translation.json">
+        <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+              <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/locales/ro/translation.json">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="20" />
+            <state relative-caret-position="103">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/SearchBar/SearchBar.css">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="102">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -216,7 +390,6 @@
         <option value="$PROJECT_DIR$/src/components/Modal/Modal.js" />
         <option value="$PROJECT_DIR$/src/pages/Jobs/JobsPage.css" />
         <option value="$PROJECT_DIR$/src/i18n.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/Navigator/Navigator.css" />
         <option value="$PROJECT_DIR$/src/components/SearchBar/SearchBar.css" />
         <option value="$PROJECT_DIR$/src/locales/ro/translation.json" />
@@ -224,6 +397,7 @@
         <option value="$PROJECT_DIR$/src/locales/de/translation.json" />
         <option value="$PROJECT_DIR$/src/components/Navigator/Navigator.js" />
         <option value="$PROJECT_DIR$/src/components/SearchBar/SearchBar.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/pages/Jobs/JobsPage.js" />
       </list>
     </option>
@@ -256,6 +430,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,41 +459,28 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Navigator" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchBar" type="462c0819:PsiDirectoryNode" />
+              <item name="Jobs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Modal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
-              <item name="de" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
-              <item name="ro" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Navigator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
@@ -365,7 +527,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,7 +583,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37763000" />
+    <option name="totallyTimeSpent" value="37982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -433,8 +594,8 @@
       <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.25" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49925596" visible="true" weight="0.2885246" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50074404" side_tool="true" visible="true" weight="0.2885246" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.4985119" visible="true" weight="0.2885246" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5014881" side_tool="true" visible="true" weight="0.2885246" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="TypeScript" order="5" />
@@ -465,7 +626,11 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -544,8 +709,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Jobs/JobsComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="-442">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -554,8 +719,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-319">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="34">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -568,8 +733,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="102">
+          <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -580,42 +745,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/material-ui-search-bar/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/material-ui-search-bar/lib/index.js" />
     <entry file="file://$PROJECT_DIR$/src/components/SearchBar/SearchBar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -634,9 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -682,20 +815,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Jobs/JobsPage.js">
+    <entry file="file://$PROJECT_DIR$/src/components/SearchBar/SearchBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="87" column="29" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="29" />
+        <state relative-caret-position="145">
+          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SearchBar/SearchBar.js">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Jobs/JobsPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="63" column="63" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

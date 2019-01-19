@@ -5,66 +5,16 @@ import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavI
 import {Link} from "react-router-dom";
 import {JobRepository} from "../../repository/JobRepository";
 import Navigator from "../../components/Navigator/Navigator";
-import i18n from '../../i18n'
-import {Trans} from "react-i18next";
-const defaultJobs = [
-    {
-        id: 1,
-        title: "Title1",
-        description: "Description1 asgsdf 32rf asdg sdf cargs fhnsdsfvsdhfbs3gdsfg re gsdf w fgfdgs fdb dfg  asgasg adsg sfdg asdg vsfdb trjghnthdfgh bfgsdh bdfsaf afd gcvsdfgxc asdfvgfnc sgsda sdbdgshrtear fnhdrse fdv ser xnf xdgxf gnref  gdsfv a fdsaxc gsfbvcv",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        phoneNumber: '0759021256',
-        email: 'andrasiladislau@gmail.com',
-        type: 'development',
-        address: 'Cluj-Napoca Buftea 7'
-    },
-    {
-        id: 2,
-        title: "Title2",
-        description: "Description2",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        phoneNumber: '0759021256',
-    },
-    {
-        id: 3,
-        title: "Title3",
-        description: "Description3",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        phoneNumber: '0759021256',
-    },
-    {
-        id: 4,
-        title: "Title4",
-        description: "Description4",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        phoneNumber: '0759021256',
-    },
-    {
-        id:5,
-        title: "Title5",
-        description: "Description5",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        phoneNumber: '0759021256',
-    },
-    {
-        id:6,
-        title: "Title6",
-        description: "Description6",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/HP_logo_630x630.png",
-        phoneNumber: '0759021256',
-    }
-];
+import axios from 'axios';
 export default class JobsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            jobs: defaultJobs,
+            jobs: this.getAllJobsFromServer(),
             searchValue: "",
             userName: "TestUserName"
-        };
-        // this.getAllJobsFromServer();
+        }
     }
-
 
     getAllJobsFromServer = () => {
         JobRepository.get().then(result => {
@@ -82,12 +32,13 @@ export default class JobsPage extends Component {
                 jobs.push(this.state.jobs[i]);
             }
         }
+
         return jobs;
     }
     //TODO link to back-end
     filterJobs = (searchValue) => {
         this.setState({
-            jobs: defaultJobs.filter(job => job.title.includes(searchValue)),
+            jobs: this.state.jobs.filter(job => job.title.includes(searchValue)),
             searchValue
         });
     };
@@ -110,7 +61,7 @@ export default class JobsPage extends Component {
     };
 
     createSubContainers = () => {
-        const numberOfContainer = Math.ceil(this.state.jobs.length/4);
+        const numberOfContainer = Math.ceil(this.state.jobs && this.state.jobs.length/4);
         const subContainers = [];
         for(let i = 0; i < numberOfContainer; i++ ) {
             subContainers.push(<JobsSubContainer
