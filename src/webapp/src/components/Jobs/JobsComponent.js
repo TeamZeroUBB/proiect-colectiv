@@ -7,18 +7,16 @@ import Modal from "../Modal/Modal";
 //a dictionary with a default type
 export var typeToPicture = new Proxy(
 	{
-		"0": "https://www.insidescience.org/sites/default/files/5_heic1808a_crop.jpg",
-		"1": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2013/01/24/12/v2-cute-cat-picture.jpg?w968h681",
-		"2": "https://ichef.bbci.co.uk/news/976/cpsprodpb/2E2E/production/_102622811_sunrise.jpg",
-		"3": "https://gfnc1kn6pi-flywheel.netdna-ssl.com/wp-content/uploads/2017/12/pictures-of-golden-retrievers.jpg",
-		"4": "http://coolwildlife.com/wp-content/uploads/galleries/post-3004/Fox%20Picture%20006.jpg",
-		"5": "https://images.unsplash.com/photo-1533651180995-3b8dcd33e834?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
-		"6": "https://amp.businessinsider.com/images/55b00ec72acae716008b920d-750-563.jpg",
+		"1": "http://pluspng.com/img-png/technology-png-png-file-name-technology-536.png",
+		"2": "http://www.roscommonarts.com/wp-content/uploads/2018/09/law.png",
+		"3": "http://www.pngmart.com/files/7/Economy-PNG-Image.png",
+		"4": "http://www.pngonly.com/wp-content/uploads/2017/06/Education-PNG-03.png",
+		"5": "https://pngimage.net/wp-content/uploads/2018/05/art-png-images-2.png",
 	},
 	{
 		get: function (object, property) {
 			//default value if the type is not supported
-			return object.hasOwnProperty(property) ? object[property] : "https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg";
+			return object.hasOwnProperty(property) ? object[property] : "http://dubaitask.com/wp-content/uploads/2016/02/cropped-Dubaitask-dubai-jobs.png";
 		}
 	}
 );

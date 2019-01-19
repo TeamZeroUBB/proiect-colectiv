@@ -1,6 +1,14 @@
 #searchBar {
-    float: right;
+    margin-left: 40%;
     margin-top: 8px;
-    width: 45%;
+    width: 50%;
     height: 50px;
+}
+
+.input-group-addon {
+    cursor: pointer;
+}
+
+#searchBar > span{
+    max-width: 1000px;
 }

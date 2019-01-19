@@ -29,7 +29,16 @@ public class AppUser implements Serializable {
     private boolean isAdmin;
 
 
+    private boolean isCvUploaded = false;
 
+
+    public boolean getIsCvUploaded() {
+        return isCvUploaded;
+    }
+
+    public void setIsCvUploaded(boolean cvUploaded) {
+        isCvUploaded = cvUploaded;
+    }
 
     public boolean getIsAdmin() {
         return isAdmin;

@@ -11,13 +11,13 @@ import RegisterSuccess from './pages/Login Page/SubLogins/RegisterSuccess/Regist
 import JobsPage from "./pages/Jobs/JobsPage";
 import { withNamespaces } from 'react-i18next';
 import UserDetailsPage from "./pages/User Page/UserDetailsPage/UserDetailsPage";
+import UserDeletePage from "./pages/User Page/UserDeletePage/UserDeletePage";
 
 //base url for ajax calls
 axios.defaults.baseURL = apiUrl;
 // axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
 //allow cross-origin calls
 axios.defaults.headers.post['crossDomain'] = true;
-
 
 function App ({ t }) {
     return (

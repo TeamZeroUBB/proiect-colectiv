@@ -4,13 +4,17 @@
     height: 50px;
 }
 
+.navi-addpost{
+	cursor: pointer;
+}
+
 .navi div{
 	text-align: center;
 	text-decoration: none;
 }
 
 .navi-left{
-	flex: 2 0 0;
+	flex: 4 0 0;
 	background-color: rgba(48, 48, 48, 1);
 }
 
@@ -19,13 +23,14 @@
 	left: 10%;
 	height: 100px;
 	width: 100px;
-	border-radius: 100%;
-	background: url("../../media/logo.png") no-repeat;
+	border-radius: 150%;
+	transform: scale(1.5);
+	background: url("http://www.pngall.com/wp-content/uploads/2016/07/Jobs-PNG-Picture.png") no-repeat;
 	background-size: 100%;
 }
 
 .navi-right{
-	flex: 1 0 0;
+	flex: 3 0 0;
 	display: flex;
 	flex-direction: row;
 	background-color: rgba(48, 48, 48, 1);
@@ -36,7 +41,7 @@
 	font-size: 14px;
 	color: white;
 	outline: none;
-	padding: 14px 16px;
+	padding: 14px 14px;
 	background-color: rgba(48, 48, 48, 1);
 	border: none;
 	text-decoration: none;
