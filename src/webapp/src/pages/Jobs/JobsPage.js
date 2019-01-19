@@ -4,28 +4,17 @@ import JobsSubContainer from "./JobsSubContainer/JobsSubContainer";
 import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {JobRepository} from "../../repository/JobRepository";
-
+import Navigator from "../../components/Navigator/Navigator";
 import axios from 'axios';
 export default class JobsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            jobs: null,
+            jobs: this.getAllJobsFromServer(),
             searchValue: "",
-            userName: "TestUserName"
+            userName: "TestUserName",
         }
-
-        this.getJobs();
     }
-
-    getJobs() {
-        axios.get(
-            axios.defaults.baseURL + 'job-offers'
-        ).then(results => {
-          this.setState( { jobs: results.data.list });
-        });
-    }
-
 
     getAllJobsFromServer = () => {
         JobRepository.get().then(result => {
@@ -47,8 +36,7 @@ export default class JobsPage extends Component {
         return jobs;
     }
     //TODO link to back-end
-    filterJobs = (e) => {
-        const searchValue = e.target.value;
+    filterJobs = (searchValue) => {
         this.setState({
             jobs: this.state.jobs.filter(job => job.title.includes(searchValue)),
             searchValue
@@ -73,7 +61,7 @@ export default class JobsPage extends Component {
     };
 
     createSubContainers = () => {
-        const numberOfContainer = Math.ceil(this.state.jobs.length/4);
+        const numberOfContainer = Math.ceil(this.state.jobs && this.state.jobs.length/4);
         const subContainers = [];
         for(let i = 0; i < numberOfContainer; i++ ) {
             subContainers.push(<JobsSubContainer
@@ -89,26 +77,7 @@ export default class JobsPage extends Component {
     render() {
         return (
             <div id="mainPage">
-                <Navbar inverse>
-                    <Navbar.Header>
-                        <Navbar.Brand>
-                            <Link to="/jobs">Team Zero Jobs</Link>
-                        </Navbar.Brand>
-                        <Navbar.Toggle />
-                    </Navbar.Header>
-                    <Navbar.Collapse>
-                        <Navbar.Form pullLeft>
-                            <FormGroup id="searchBar">
-                                <FormControl value={this.state.searchValue} onChange={this.filterJobs} type="text" placeholder="Search" />
-                            </FormGroup>{' '}
-                        </Navbar.Form>
-                        <Nav pullRight>
-                            <NavItem eventKey={1} href="#">
-                                Welcome, {this.state.userName}
-                            </NavItem>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
+                <Navigator searchCallback={this.filterJobs}/>
                 <div id="jobsContainer">
                     {this.createSubContainers()}
                 </div>
