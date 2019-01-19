@@ -20,6 +20,8 @@ public class Company {
 
 
 
+
+
     public String getEmail() {
         return email;
     }

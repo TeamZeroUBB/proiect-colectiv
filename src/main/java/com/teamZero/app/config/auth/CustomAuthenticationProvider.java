@@ -32,29 +32,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 
-        String username = authentication.getName();
-        String password = authentication.getCredentials().toString();
-
-        System.out.println("Login: " + username + " " + password);
-
-        if (username == null || password == null)
-            throw new BadCredentialsException("Invalid username/password");
-
-        Optional<Long> appUserIdOptional = appUserDao.login(username, password);
-
-        if (!appUserIdOptional.isPresent()){
-            throw new BadCredentialsException("Invalid username/password");
-        }
-
-
-        List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-
-        userRoleDao.getRolesForUser(appUserIdOptional.get()).forEach(
-                x -> grantedAuthorities.add(new SimpleGrantedAuthority(x.toString()))
-        );
-
-        return new UsernamePasswordAuthenticationToken(username, password, grantedAuthorities);
-
+      return null;
     }
 
     @Override
