@@ -5,6 +5,8 @@ import { Grid, Row, Col } from "react-bootstrap";
 import "./UserDetailsPage.css"
 
 const noFileSelected = "Please select a file first";
+const fileUpSuccess = "Success, you just uploaded your CV";
+const fileUpError = "Something went wrong uploading CV";
 
 export default class UserDetailsPage extends Component {
     constructor(props) {
@@ -47,8 +49,8 @@ export default class UserDetailsPage extends Component {
             })
         }
         axios.put(`add-cv/${this.state.user.id}`, data, config)
-            .then(res => console.log(res.statusText))
-            .catch(err => console.log("Something went wrong uploading CV", err))
+            .then(res => this.setState({showError: true, errorMessage: fileUpSuccess}))
+            .catch(err => this.setState({showError: true, errorMessage: fileUpError}))
     }
 
     render() {

@@ -35,7 +35,7 @@ class Navigator extends Component {
                         Create a new offer
                     </Link>
 
-					<div class="menu-flags">
+					<div className="menu-flags">
                         <ReactFlagsSelect
                             countries={["US", "RO", "DE"]}
                             customLabels={{"US": "English","DE": "German","RO": "Romanian"}}
