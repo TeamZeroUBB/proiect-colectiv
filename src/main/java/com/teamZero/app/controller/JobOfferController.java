@@ -52,8 +52,8 @@ public class JobOfferController {
 
 
 
-    @DeleteMapping("/delete/{userId}/{jobOfferId}")
-    public ResponseEntity deleteJobOffer(@PathVariable Long userId, @PathVariable Long jobOfferId){
+    @DeleteMapping("/delete/{jobOfferId}")
+    public ResponseEntity deleteJobOffer(@PathVariable Long jobOfferId){
 
         try{
             
