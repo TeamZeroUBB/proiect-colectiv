@@ -54,7 +54,7 @@ export default class JobsPage extends Component {
                 });
             })
     };
-    
+
     saveCallback = (newJob) => {
         JobRepository
             .update(newJob)
@@ -116,6 +116,12 @@ export default class JobsPage extends Component {
 
 
     render() {
+        // const user = this.props.session.user;
+        const user = {
+            userId: 2,
+            isAdmin: true,
+        };
+
         return (
             <div id="mainPage">
                 <Navigator

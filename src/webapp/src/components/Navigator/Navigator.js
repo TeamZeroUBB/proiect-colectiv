@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom';
 import './Navigator.css';
 import ReactFlagsSelect from "react-flags-select";
@@ -32,6 +32,10 @@ class Navigator extends Component {
                 </div>
 
                 <div className="navi-right">
+                    <Link to="/delete-user" className="navi-button navi-addpost">
+                        <FontAwesomeIcon className="fa-user-minus" icon={faUserMinus} />
+                        Delete user
+                    </Link>
                     <Link to="/login" className="navi-button navi-account">
                         <FontAwesomeIcon className="fa-fw" icon={faUser} />
 						{i18n.t('myAccountLabel')}
