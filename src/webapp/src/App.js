@@ -18,13 +18,14 @@ axios.defaults.baseURL = apiUrl;
 //allow cross-origin calls
 axios.defaults.headers.post['crossDomain'] = true;
 
+
 function App ({ t }) {
     return (
         <Router>
             <div className="App">
-                <Route exact path="/" component={FrontPage} />
-                <Route path="/login" component={LoginPage} />
-                <Route path="/signupsuccess" component={RegisterSuccess} />
+                <Route exact path="/" component={FrontPage}/>
+                <Route path="/login" component={LoginPage}/>
+                <Route path="/signupsuccess" component={RegisterSuccess}/>
                 <Route path="/jobs" component={JobsPage}/>
                 <Route path="/user/:userId" component={UserDetailsPage}/>
             </div>

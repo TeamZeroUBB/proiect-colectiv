@@ -19,8 +19,13 @@ public class Company {
     private Long userId;
 
 
+    public List<JobOffer> getPostedJobOffers() {
+        return postedJobOffers;
+    }
 
-
+    public void setPostedJobOffers(List<JobOffer> jobOffers) {
+        this.postedJobOffers = jobOffers;
+    }
 
     public String getEmail() {
         return email;
@@ -37,8 +42,6 @@ public class Company {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-    private List<JobOffer> jobOffers;
 
     public Long getCompanyId() {
         return companyId;
@@ -62,22 +65,6 @@ public class Company {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public List<JobOffer> getJobOffers() {
-        return jobOffers;
-    }
-
-    public void setJobOffers(List<JobOffer> jobOffers) {
-        this.jobOffers = jobOffers;
-    }
-
-    public List<JobOffer> getPostedJobOffers() {
-        return postedJobOffers;
-    }
-
-    public void setPostedJobOffers(List<JobOffer> postedJobOffers) {
-        this.postedJobOffers = postedJobOffers;
     }
 
     public Long getUserId() {

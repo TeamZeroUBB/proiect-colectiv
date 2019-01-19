@@ -87,7 +87,11 @@ public class UserService{
 
     @Async
     @Transactional
-    public void deleteUser(Long userId){
+    public void deleteUser(String username){
+
+        AppUser appUser = appUserDao.getOneByUsername(username);
+        Long userId = appUser.getId();
+
         appUserDao.delete(userId);
         userRoleDao.removeAllRolesFromUser(userId);
         companyDao.deleteByUserId(userId);

@@ -127,7 +127,7 @@ public class JobOfferDao {
                 "title = :title, description = :description, company_pk = :companyId, app_user_pk = :userId, " +
                 "email = :email, phone_number = :phoneNumber, address = :address," +
                 "city = :city, type = :type, no_of_applications = :numberOfApplications, " +
-                "salary = : salary WHERE job_offer_pk = :jobOfferId", parameters);
+                "salary = :salary WHERE job_offer_pk = :jobOfferId", parameters);
     }
 
     public void delete(Long jobOfferId){

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import "./JobsPage.css"
+import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
+import {Link} from "react-router-dom";
 import JobsSubContainer from "./JobsSubContainer/JobsSubContainer";
 import { JobRepository } from "../../repository/JobRepository";
 import Navigator from "../../components/Navigator/Navigator";
@@ -27,6 +29,15 @@ export default class JobsPage extends Component {
 		});
 	}
 
+    getAllJobsFromServer = () => {
+        JobRepository.get().then(result => {
+            this.setState({
+                jobs: result && result.data && result.data.list
+            });
+            console.log(this.state.jobs);
+        })
+    };
+
 	//TODO link to back-end
 	filterJobs = (searchValue) => {
 		searchValue = searchValue.toLowerCase();
@@ -42,7 +53,6 @@ export default class JobsPage extends Component {
 		this.setState({
 			jobs: jobs.filter(job => job.id !== jobId)
 		})
-	};
 
 	//TODO link to back-end
 	saveCallback = (newJob) => {
@@ -54,6 +64,20 @@ export default class JobsPage extends Component {
 		});
 		JobRepository.update(newJob);
 	};
+
+    createSubContainers = () => {
+        const numberOfContainer = Math.ceil(this.state.jobs && this.state.jobs.length/4);
+        const subContainers = [];
+        for(let i = 0; i < numberOfContainer; i++ ) {
+            subContainers.push(<JobsSubContainer
+                key={i}
+                jobs={this.getJobsForContainer(i)}
+                deleteCallback={this.deleteCallback}
+                saveCallback={this.saveCallback}
+            />);
+        }
+        return subContainers;
+    };
 
 	render() {
 		if (!this.state.shownJobs)
