@@ -11,6 +11,7 @@ import RegisterSuccess from './pages/Login Page/SubLogins/RegisterSuccess/Regist
 import JobsPage from "./pages/Jobs/JobsPage";
 import { withNamespaces } from 'react-i18next';
 import UserDetailsPage from "./pages/User Page/UserDetailsPage/UserDetailsPage";
+import UserDeletePage from "./pages/User Page/UserDeletePage/UserDeletePage";
 
 //base url for ajax calls
 axios.defaults.baseURL = apiUrl;
@@ -18,19 +19,21 @@ axios.defaults.baseURL = apiUrl;
 //allow cross-origin calls
 axios.defaults.headers.post['crossDomain'] = true;
 
-
-function App ({ t }) {
-    return (
-        <Router>
-            <div className="App">
-                <Route exact path="/" component={FrontPage}/>
-                <Route path="/login" component={LoginPage}/>
-                <Route path="/signupsuccess" component={RegisterSuccess}/>
-                <Route path="/jobs" component={JobsPage}/>
-                <Route path="/user/:userId" component={UserDetailsPage}/>
-            </div>
-        </Router>
-    );
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <div className="App">
+                    <Route exact path="/" component={FrontPage} />
+                    <Route path="/login" component={LoginPage} />
+                    <Route path="/signupsuccess" component={RegisterSuccess} />
+                    <Route path="/jobs" component={JobsPage}/>
+                    <Route path="/user/:userId" component={UserDetailsPage}/>
+                    <Route path="/delete-user" component={UserDeletePage}/>
+                </div>
+            </Router>
+        );
+    }
 }
 
 export default withNamespaces()(App);

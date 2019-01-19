@@ -50,7 +50,7 @@ export default class JobsPage extends Component {
         });
         JobRepository.delete(jobId);
     };
-    
+
     saveCallback = (newJob) => {
         const jobs = this.state.jobs;
         const index = jobs.findIndex(job => job.id === newJob.id);
@@ -76,6 +76,12 @@ export default class JobsPage extends Component {
     };
 
     render() {
+        // const user = this.props.session.user;
+        const user = {
+            userId: 2,
+            isAdmin: true,
+        };
+
         return (
             <div id="mainPage">
                 <Navigator searchCallback={this.filterJobs}/>
