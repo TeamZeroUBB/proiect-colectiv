@@ -29,24 +29,22 @@ export default class SearchBar extends Component {
 
     render() {
         return (
-            <form >
-                <FormGroup id="searchBar">
-                    <InputGroup>
-                        <FormControl
-                            type="text"
-                            placeholder={i18n.t('searchPlaceholder')}
-                            onKeyPress={this.handleEnter}
-                            onChange={this.handleChange}
-                        />
+            <FormGroup id="searchBar">
+                <InputGroup>
+                    <FormControl
+                        type="text"
+                        placeholder={i18n.t('searchPlaceholder')}
+                        onKeyPress={this.handleEnter}
+                        onChange={this.handleChange}
+                    />
 
-                        <InputGroup.Addon>
-                            <div onClick={this.handleSearchClick}>
+                    <InputGroup.Addon>
+                        <div onClick={this.handleSearchClick}>
                             <Glyphicon glyph="glyphicon glyphicon-search" />
-                            </div>
-                        </InputGroup.Addon>
-                    </InputGroup>
-                </FormGroup>
-            </form>
+                        </div>
+                    </InputGroup.Addon>
+                </InputGroup>
+            </FormGroup>
         );
     }
 }
