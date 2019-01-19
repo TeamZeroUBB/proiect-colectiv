@@ -4,6 +4,7 @@ import com.teamZero.app.domain.user.UserRole;
 import com.teamZero.app.service.UserRoleService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,9 @@ public class AdminController {
 
         try{
             return ResponseEntity.status(200).body(userRoleService.getRolesForUser(username));
+        }
+        catch (EmptyResultDataAccessException e1){
+            return ResponseEntity.status(404).body("No user with the username: " + username);
         }
         catch (Exception e){
             LOGGER.error(e.getMessage(), e);

@@ -1,0 +1,15 @@
+.main-card {
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 7%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main-card h5 {
+  font-size: 50px;
+}
+
+.main-card h6 {
+  font-size: 35px;
+}

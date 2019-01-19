@@ -29,6 +29,8 @@ public class JobOfferController {
             return ResponseEntity.status(200).body(jobOfferService.addJobOffer(jobOffer).get());
         }
         catch (Exception e){
+
+            LOGGER.error(e.getMessage(), e);
             return ResponseEntity.status(500).body(null);
         }
     }

@@ -4,6 +4,7 @@ import JobsSubContainer from "./JobsSubContainer/JobsSubContainer";
 import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {JobRepository} from "../../repository/JobRepository";
+<<<<<<< HEAD
 import Navigator from "../../components/Navigator/Navigator";
 import i18n from '../../i18n'
 import {Trans} from "react-i18next";
@@ -54,15 +55,28 @@ const defaultJobs = [
         phoneNumber: '0759021256',
     }
 ];
+=======
+
+import axios from 'axios';
+>>>>>>> master
 export default class JobsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            jobs: defaultJobs,
+            jobs: null,
             searchValue: "",
             userName: "TestUserName"
-        };
-        // this.getAllJobsFromServer();
+        }
+
+        this.getJobs();
+    }
+
+    getJobs() {
+        axios.get(
+            axios.defaults.baseURL + 'job-offers'
+        ).then(results => {
+          this.setState( { jobs: results.data.list });
+        });
     }
 
 
@@ -82,12 +96,13 @@ export default class JobsPage extends Component {
                 jobs.push(this.state.jobs[i]);
             }
         }
+
         return jobs;
     }
     //TODO link to back-end
     filterJobs = (searchValue) => {
         this.setState({
-            jobs: defaultJobs.filter(job => job.title.includes(searchValue)),
+            jobs: this.state.jobs.filter(job => job.title.includes(searchValue)),
             searchValue
         });
     };

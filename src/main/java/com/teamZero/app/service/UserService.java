@@ -90,10 +90,7 @@ public class UserService{
     public void deleteUser(Long userId){
         appUserDao.delete(userId);
         userRoleDao.removeAllRolesFromUser(userId);
-
-        Company company = companyDao.getOneByUserId(userId);
-        companyDao.delete(company.getCompanyId());
-
+        companyDao.deleteByUserId(userId);
         jobOfferDao.deleteByUserId(userId);
     }
 

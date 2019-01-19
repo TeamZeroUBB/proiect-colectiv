@@ -67,10 +67,11 @@ public class JobOfferService{
                                                            String startDate,
                                                            String endDate,
                                                            String jobType,
-                                                           String startingSalary){
+                                                           String startingSalary,
+                                                           String title){
 
 
-        List<JobOffer> jobOffers = jobOfferDao.filterJobOffers(startDate, endDate, jobType, startingSalary);
+        List<JobOffer> jobOffers = jobOfferDao.filterJobOffers(startDate, endDate, jobType, startingSalary, title);
 
         start = start < 0 ? 0 : start;
         start = start > jobOffers.size() ? jobOffers.size() - 1 : start;
@@ -92,4 +93,3 @@ public class JobOfferService{
     }
 
 }
-
