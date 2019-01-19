@@ -42,14 +42,15 @@ export default class JobsPage extends Component {
             searchValue
         });
     };
-//TODO link to back-end
     deleteCallback = (jobId) => {
         const jobs = this.state.jobs;
+        console.log({jobId});
         this.setState({
-            jobs: jobs.filter(job => job.id!==jobId)
-        })
+            jobs: jobs.filter(job => job.jobOfferId!==jobId)
+        });
+        JobRepository.delete(jobId);
     };
-//TODO link to back-end
+    
     saveCallback = (newJob) => {
         const jobs = this.state.jobs;
         const index = jobs.findIndex(job => job.id === newJob.id);
