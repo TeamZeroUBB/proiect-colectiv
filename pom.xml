@@ -6,12 +6,12 @@
 
     <groupId>com.emuStuff.medichien</groupId>
     <artifactId>LayerApp</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <version>1.0</version>
     <properties>
     </properties>
     <build>
-        <finalName>App</finalName>
+        <finalName>app</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
