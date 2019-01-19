@@ -91,14 +91,23 @@ export default class JobsPage extends Component {
     };
 
 	render() {
+        return (
 		if (!this.state.shownJobs)
+            <div id="mainPage">
 			return null;
+                <Navigator searchCallback={this.filterJobs}/>
 		return (
+                <div id="jobsContainer">
 			<div id="mainPage">
+                    {this.createSubContainers()}
 				<Navigator searchCallback={this.filterJobs} />
+                </div>
 				<div id="jobsContainer">
+            </div>
 					<JobsSubContainer
+        );
 						jobs={this.state.shownJobs}
+    }
 						deleteCallback={this.deleteCallback}
 						saveCallback={this.saveCallback}
 					/>
