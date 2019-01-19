@@ -199,10 +199,17 @@ public class JobOfferDao {
 
         Map<String, Object> parameters = new HashMap<>();
 
+
+        int startSalaryInt = 0;
+
+        if (! startSalary.equals("NaN")){
+            startSalaryInt = Integer.parseInt(startSalary);
+        }
+
         parameters.put("starDate", startDate);
         parameters.put("endDate" , endDate);
         parameters.put("jobType" , jobType);
-        parameters.put("startSalary", Integer.parseInt(startSalary));
+        parameters.put("startSalary", startSalaryInt);
         parameters.put("title", "%" + title + "%");
 
         String query = "SELECT * FROM job_offer" + condition;
