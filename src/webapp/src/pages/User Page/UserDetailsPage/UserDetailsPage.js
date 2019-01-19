@@ -13,9 +13,8 @@ export default class UserDetailsPage extends Component {
     }
 
     componentDidMount() {
-      axios.get(
-          axios.defaults.baseURL + `user/${this.props.match.params.userId}`
-      ).then(results => {
+      axios.get(`user/${this.props.match.params.userId}`)
+      .then(results => {
           this.setState({ user: results.data });
       });
     }
