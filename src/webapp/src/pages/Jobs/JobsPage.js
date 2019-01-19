@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import "./JobsPage.css"
 import JobsSubContainer from "./JobsSubContainer/JobsSubContainer";
-import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
-import {Link} from "react-router-dom";
 import {JobRepository} from "../../repository/JobRepository";
 import Navigator from "../../components/Navigator/Navigator";
-import axios from 'axios';
+import Modal from "../../components/Modal/Modal";
+
 export default class JobsPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             jobs: this.getAllJobsFromServer(),
-            searchValue: "",
             userName: "TestUserName",
+            showModal: false
         }
     }
 
@@ -21,7 +20,6 @@ export default class JobsPage extends Component {
             this.setState({
                 jobs: result && result.data && result.data.list
             });
-            console.log(this.state.jobs);
         })
     };
 
@@ -32,33 +30,62 @@ export default class JobsPage extends Component {
                 jobs.push(this.state.jobs[i]);
             }
         }
-
         return jobs;
     }
-    //TODO link to back-end
+
     filterJobs = (searchValue) => {
-        this.setState({
-            jobs: this.state.jobs.filter(job => job.title.includes(searchValue)),
-            searchValue
-        });
+        JobRepository
+            .filter(searchValue)
+            .then((result) => {
+                this.setState({
+                    jobs: result && result.data && result.data.list
+                });
+            });
+
     };
+    
     deleteCallback = (jobId) => {
-        const jobs = this.state.jobs;
-        console.log({jobId});
-        this.setState({
-            jobs: jobs.filter(job => job.jobOfferId!==jobId)
-        });
-        JobRepository.delete(jobId);
+        JobRepository
+            .delete(jobId)
+            .then(response => {
+                const jobs = this.state.jobs;
+                this.setState({
+                    jobs: jobs.filter(job => job.jobOfferId!==jobId)
+                });
+            })
     };
     
     saveCallback = (newJob) => {
-        const jobs = this.state.jobs;
-        const index = jobs.findIndex(job => job.id === newJob.id);
-        jobs.splice(index, 1, newJob);
-        this.setState({
-            jobs: jobs
-        });
-        JobRepository.update(newJob);
+        JobRepository
+            .update(newJob)
+            .then(response => {
+                const jobs = this.state.jobs;
+                const index = jobs.findIndex(job => job.jobOfferId === newJob.jobOfferId);
+                jobs.splice(index, 1, newJob);
+                this.setState({
+                    jobs: jobs
+                });
+            })
+        ;
+    };
+
+    //TODO update userId to current logged in userId and same for companyId
+    createCallback = (job) => {
+        const newJob = Object.assign(
+            {},
+            job,
+            {
+                userId: 1,
+                city: "thisFieldIsNotUsed",
+                companyId: 0
+            });
+        JobRepository
+            .add(newJob)
+            .then(response=>{
+                this.setState({
+                    jobs: [...this.state.jobs, newJob]
+                })
+            });
     };
 
     createSubContainers = () => {
@@ -75,10 +102,35 @@ export default class JobsPage extends Component {
         return subContainers;
     };
 
+    addClickedCallback = () => {
+        this.setState({
+            showModal: true
+        })
+    };
+
+    jobOfferCloseHandler = () => {
+        this.setState({
+            showModal: false
+        })
+    };
+
+
     render() {
         return (
             <div id="mainPage">
-                <Navigator searchCallback={this.filterJobs}/>
+                <Navigator
+                    searchCallback={this.filterJobs}
+                    addClickedCallback={this.addClickedCallback}
+                />
+                {this.state.showModal &&
+                <Modal
+                    job={{}}
+                    showModal={this.state.showModal}
+                    closeModal={this.jobOfferCloseHandler}
+                    isEditMode={true}
+                    saveCallback={this.createCallback}
+                />
+                }
                 <div id="jobsContainer">
                     {this.createSubContainers()}
                 </div>

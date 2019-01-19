@@ -101,17 +101,20 @@ public class AppUserDao {
         parameters.put("city", user.getCity());
         parameters.put("companyId", user.getCompanyId());
         parameters.put("phoneNumber", user.getPhoneNumber());
+        parameters.put("isCvUploaded", user.getIsCvUploaded());
 
         jdbcTemplate.update("UPDATE app_user SET " +
                         "username = :username, password = :password, " +
                         "email  = :email,  first_name = :firstName, last_name = :lastName, " +
                         "city   = :city,   first_name = :address, " +
-                        "phone_number = :phoneNumber, company_pk = :companyId " +
+                        "phone_number = :phoneNumber, company_pk = :companyId, " +
+                        "is_cv_uploaded = :isCvUploaded " +
                         "WHERE app_user_pk = :userId",
                 parameters);
 
     }
 
+    
     public void addCvToUser(Long userId, byte[] cv){
 
         Map<String, Object> parameters = new HashMap<>();
@@ -121,7 +124,7 @@ public class AppUserDao {
 
         jdbcTemplate.update(
                 "UPDATE app_user SET " +
-                        " cv = :cv " +
+                        " cv = :cv, is_cv_uploaded = true " +
                         "WHERE app_user_pk = :userId",
                 parameters);
     }
@@ -153,7 +156,7 @@ public class AppUserDao {
             user.setCity(rs.getString("city"));
             user.setPhoneNumber(rs.getString("phone_number"));
             user.setCompanyId(rs.getLong("company_pk"));
-
+            user.setIsCvUploaded(rs.getBoolean("is_cv_uploaded"));
 
             return user;
 

@@ -5,26 +5,27 @@ import i18n from '../../i18n'
 export default class SearchBar extends Component {
     constructor(props, context) {
         super(props, context);
-
-        this.handleChange = this.handleChange.bind(this);
-
         this.state = {
             value: ''
         };
     }
 
-    getValidationState() {
-        const length = this.state.value.length;
-        if (length > 10) return 'success';
-        else if (length > 5) return 'warning';
-        else if (length > 0) return 'error';
-        return null;
-    }
+    handleEnter = (event) => {
+        if(event.charCode===13){
+            event.preventDefault();
+            this.props.searchCallback(this.state.value);
+        }
+    };
+
+    handleSearchClick = () => {
+        this.props.searchCallback(this.state.value);
+    };
 
     handleChange = (e) => {
-        this.props.searchCallback(e.target.value);
-        this.setState({ value: e.target.value });
-    }
+        this.setState({
+            value: e.target.value
+        })
+    };
 
     render() {
         return (
@@ -34,10 +35,14 @@ export default class SearchBar extends Component {
                         <FormControl
                             type="text"
                             placeholder={i18n.t('searchPlaceholder')}
+                            onKeyPress={this.handleEnter}
                             onChange={this.handleChange}
                         />
+
                         <InputGroup.Addon>
+                            <div onClick={this.handleSearchClick}>
                             <Glyphicon glyph="glyphicon glyphicon-search" />
+                            </div>
                         </InputGroup.Addon>
                     </InputGroup>
                 </FormGroup>

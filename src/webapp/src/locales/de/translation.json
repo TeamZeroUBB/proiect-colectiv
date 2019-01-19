@@ -1,5 +1,17 @@
 {
   "myAccountLabel": "Mein Konto",
   "searchPlaceholder": "Suche...",
-  "applyLabel": "Anwenden"
+  "applyLabel": "Anwenden",
+  "titlePlaceholderLabel": "Titel eingeben...",
+  "typePlaceholderLabel": "Wählen Sie einen Typ aus...",
+  "descriptionPlaceholderLabel": "Geben Sie eine Beschreibung ein...",
+  "phoneNumberPlaceholderLabel": "Eine Telefonnummer eingeben...",
+  "emailPlaceholderLabel": "Geben Sie eine E-Mail ein...",
+  "addressPlaceholderLabel": "Gib eine Adresse ein...",
+  "newOfferLabel": "Neues Angebot",
+  "technology": "Technologie",
+  "law": "Gesetz",
+  "economy": "Wirtschaft",
+  "education": "Bildung",
+  "artist": "Künstler"
 }

@@ -1,6 +1,19 @@
 {
   "myAccountLabel": "My Account",
   "searchPlaceholder": "Search...",
-  "applyLabel": "Apply"
+  "applyLabel": "Apply",
+  "titlePlaceholderLabel": "Enter job title...",
+  "typePlaceholderLabel": "Select a type...",
+  "descriptionPlaceholderLabel": "Enter job description...",
+  "phoneNumberPlaceholderLabel": "Enter job phone number...",
+  "emailPlaceholderLabel": "Enter job E-mail...",
+  "addressPlaceholderLabel": "Enter job address...",
+  "newOfferLabel": "Create a new offer",
+  "technology": "Technology",
+  "law": "Law",
+  "economy": "Economy",
+  "education": "Education",
+  "artist": "Artist"
+
 
 }
