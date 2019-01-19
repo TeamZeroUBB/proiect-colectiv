@@ -13,6 +13,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -74,10 +75,10 @@ public class UserController {
     }
 
     @PutMapping("/add-cv/{userId}")
-    public ResponseEntity addCv(@PathVariable Long userId, @RequestBody byte[] cv){
+    public ResponseEntity addCv(@PathVariable Long userId, @RequestParam("file") MultipartFile file){
 
         try{
-            userService.addCvToUser(userId, cv);
+            userService.addCvToUser(userId, file.getBytes());
             return ResponseEntity.status(204).body("Cv added successfully");
         }
         catch (Exception e){
