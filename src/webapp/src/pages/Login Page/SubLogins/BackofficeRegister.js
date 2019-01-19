@@ -28,19 +28,15 @@ class BackofficeRegister extends Component {
 	}
 
 	buttonClicked() {
-		if(this.allisValid())
-		{
-			const formData = new FormData();
-			formData.set("email", this.username.current.state.inputValue);
-			formData.set("password", this.password.current.state.inputValue);
-			formData.set("repeatPassword", this.rePassword.current.state.inputValue);
-
-			axios.post("backoffice/account/register", formData)
-			.then((response)=>{
+		if(this.allisValid()) {
+			axios.post("/register", {
+				email: this.username.current.state.inputValue,
+				password: this.password.current.state.inputValue,
+				repeatPassword: this.rePassword.current.state.inputValue,
+			}).then((response)=>{
 				if(response.status === 200)
 					this.setState({globalErrors: null, redirectTo: (<Redirect push to='/signupsuccess' />)})
-			})
-			.catch((err)=>{
+			}).catch((err)=>{
 				if(err.response.status === 400)
 					this.setState({globalErrors: emailExistsError});
 				else

@@ -13,5 +13,6 @@
   "law": "Drept",
   "economy": "Economie",
   "education": "Educatie",
-  "artist": "Artist"
+  "artist": "Artist",
+  "deleteUserLabel": "Sterge un utilizator"
 }
