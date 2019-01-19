@@ -25,7 +25,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.teamZero.app</mainClass>
+                            <mainClass>com.teamZero.app.Main</mainClass>
                         </manifest>
                     </archive>
                     <source>8</source>
