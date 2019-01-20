@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Grid, Row, Col } from "react-bootstrap";
-
 import "./UserDetailsPage.css"
-
+import UserProfile from './UserProfile/UserProfile';
 const noFileSelected = "Please select a file first";
 const fileUpSuccess = "Success, you just uploaded your CV";
 const fileUpError = "Something went wrong uploading CV";
@@ -61,22 +59,25 @@ export default class UserDetailsPage extends Component {
         }
 
         return (
-            <div className="card md-6 main-card">
-                <div className="card-body">
-                    <h5 className="card-title">{user.username}</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">{user.lastName + ' ' + user.firstName}</h6>
-                    <h6 className="card-subtitle mb-2 text-muted">{user.email}</h6>
-                </div>
+            <>
+            <UserProfile 
+                firstName={user.firstName} 
+                lastName={user.lastName}
+                email={user.email}
+                username={user.username}
+                password={user.password}
+                phoneNumber={user.phoneNumber}
+                city={user.city} />
 
-                <form>
+                <form className="udp-upload">
                     {this.state.showError && <div className="baga ceva stiling aici">{this.state.errorMessage}</div>}
-                    <div class="form-group">
+                    <div className="file-path-wrapper">
                         <label>{user.isCvUploaded ? 'CV Re-upload' : 'CV Upload'}</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1" onChange={this.handleSelectedFile} />
+                        <input type="file" className="file-path validate" id="exampleFormControlFile1" onChange={this.handleSelectedFile} />
                     </div>
-                    <input type="button" value="Upload!" onClick={this.handleUpload} />
+                    <input type="button"  value="Upload!" onClick={this.handleUpload} />
                 </form>
-            </div>
+            </>
         );
     }
 }
