@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import "./UserDetailsPage.css"
 import UserProfile from './UserProfile/UserProfile';
+import Navigator from "../../../components/Navigator/Navigator";
 const noFileSelected = "Please select a file first";
 const fileUpSuccess = "Success, you just uploaded your CV";
 const fileUpError = "Something went wrong uploading CV";
@@ -59,25 +60,29 @@ export default class UserDetailsPage extends Component {
         }
 
         return (
-            <>
-            <UserProfile
-                firstName={user.firstName}
-                lastName={user.lastName}
-                email={user.email}
-                username={user.username}
-                password={user.password}
-                phoneNumber={user.phoneNumber}
-                city={user.city} />
+            <div>
+                <Navigator
+                    searchCallback={this.filterJobs}
+                    addClickedCallback={this.addClickedCallback}
+                />
+                <UserProfile
+                    firstName={user.firstName}
+                    lastName={user.lastName}
+                    email={user.email}
+                    username={user.username}
+                    password={user.password}
+                    phoneNumber={user.phoneNumber}
+                    city={user.city} />
 
-                <form className="udp-upload">
-                    {this.state.showError && <div className="baga ceva stiling aici">{this.state.errorMessage}</div>}
-                    <div className="file-path-wrapper">
-                        <label>{user.isCvUploaded ? 'CV Re-upload' : 'CV Upload'}</label>
-                        <input type="file" className="file-path validate" id="exampleFormControlFile1" onChange={this.handleSelectedFile} />
-                    </div>
-                    <input type="button"  value="Upload!" onClick={this.handleUpload} />
-                </form>
-            </>
+                    <form className="udp-upload">
+                        {this.state.showError && <div className="baga ceva stiling aici">{this.state.errorMessage}</div>}
+                        <div className="file-path-wrapper">
+                            <label>{user.isCvUploaded ? 'CV Re-upload' : 'CV Upload'}</label>
+                            <input type="file" className="file-path validate" id="exampleFormControlFile1" onChange={this.handleSelectedFile} />
+                        </div>
+                        <input type="button"  value="Upload!" onClick={this.handleUpload} />
+                    </form>
+            </div>
         );
     }
 }
