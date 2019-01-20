@@ -27,3 +27,12 @@
 .main-card h6 {
   font-size: 35px;
 }
+
+.main-card form input {
+  width: 50%;
+  margin-left: 35%;
+}
+
+.udp-upload{
+  margin-left: 50px;
+}
