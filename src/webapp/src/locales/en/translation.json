@@ -14,5 +14,39 @@
   "economy": "Economy",
   "education": "Education",
   "artist": "Artist",
-  "deleteUserLabel": "Delete user"
+  "deleteUserLabel": "Delete user",
+  "welcomeBack": "Welcome back!",
+  "signUpBackofficeMsg": "Sign Up and post a job offer!",
+  "signUpClientMsg": "Sign Up and earn some money!",
+  "loginTitle": "Log In",
+  "signupBackofficeTitle": "Sign Up Backoffice",
+  "signupClientTitle": "Sign Up Client",
+
+  "username": "Username",
+  "password": "Password",
+  "repassword": "Re-enter password",
+  "firstname": "First Name",
+  "lastname": "Last Name",
+  "email": "E-mail",
+  "city": "City",
+  "register": "Register",
+  "login": "login",
+
+  "emailExists": "Sorry, but this email is already taken",
+  "incompleteError": "Please fill the required fields first",
+
+  "regsucc_msg1":"Sign Up Complete!",
+  "regsucc_msg2":"Welcome abroad",
+  "regsucc_msg3":"Thank you for taking time to register. We hope you'll enjoy our community!",
+  "regsucc_msg4":"To head back to the login page, click",
+  "regsucc_msg5":"here",
+
+  "input_requiredField": "This field is required",
+  "input_longerThan": "This field should be longer than",
+  "input_shorterThan": "This field should be shorter than",
+  "input_character": "characters",
+  "input_shouldContain": "This field should contain at least",
+  "input_upperCase": "upper case characters",
+  "input_lowerCase": "lower case characters",
+  "input_match": "Passwords do not match"
 }

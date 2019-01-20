@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Input from '../../../components/common/Input/Input';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import i18n from '../../../i18n';
 
 const emailExistsError = "Sorry, but this email is already taken";
 const incompleteError = "Please fill the required fields first";
@@ -37,15 +38,16 @@ class BackofficeRegister extends Component {
 				if(response.status === 200)
 					this.setState({globalErrors: null, redirectTo: (<Redirect push to='/signupsuccess' />)})
 			}).catch((err)=>{
-				if(err.response.status === 400)
-					this.setState({globalErrors: emailExistsError});
-				else
-					this.setState({globalErrors: unknownError});
+				this.setState({globalErrors: i18n.t("emailExists")});
+				// if(err.response.status === 400)
+				// 	this.setState({globalErrors: i18n.t("emailExists")});
+				// else
+				// 	this.setState({globalErrors: });
 			});
 		}
 		else
 		{
-			this.setState({globalErrors: incompleteError});
+			this.setState({globalErrors: i18n.t("incompleteError")});
 		}
 	}
 
@@ -55,12 +57,12 @@ class BackofficeRegister extends Component {
 
 		return (
 			<div className="loginpage-tab">
-				<h1>Sign Up and post a job offer!</h1>
-				<Input inputType="input" labelName="Username" type="text" rules={{ required: true, minLength: 3 }} ref={this.username} />
-				<Input inputType="input" labelName="Password" type="password" rules={{ required: true, minLength: 8, minUpper: 1, minLower: 1 }} ref={this.password} />
-				<Input inputType="input" labelName="Confirm Password" type="password" rules={{ required: true, shouldMatch: this.password }} errorMessage="Passwords do not match" ref={this.rePassword} />
+				<h1>{i18n.t("signUpBackofficeMsg")}</h1>
+				<Input inputType="input" labelName={i18n.t("username")} type="text" rules={{ required: true, minLength: 3 }} ref={this.username} />
+				<Input inputType="input" labelName={i18n.t("password")} type="password" rules={{ required: true, minLength: 8, minUpper: 1, minLower: 1 }} ref={this.password} />
+				<Input inputType="input" labelName={i18n.t("repassword")} type="password" rules={{ required: true, shouldMatch: this.password }} errorMessage={i18n.t("input_match")} ref={this.rePassword} />
 
-				<button className="button" onClick={() => this.buttonClicked()}>Register!</button>
+				<button className="button" onClick={() => this.buttonClicked()}>{i18n.t("register")}</button>
 			</div>
 		);
 	}
