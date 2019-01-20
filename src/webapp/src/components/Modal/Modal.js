@@ -11,11 +11,11 @@ import i18n from '../../i18n';
 export default class Modal extends Component {
     menuItems = () => {
         return [
-            <MenuItem eventKey="1">{i18n.t('technology')}</MenuItem>,
-            <MenuItem eventKey="2">{i18n.t('law')}</MenuItem>,
-            <MenuItem eventKey="3">{i18n.t('economy')}</MenuItem>,
-            <MenuItem eventKey="4">{i18n.t('education')}</MenuItem>,
-            <MenuItem eventKey="5">{i18n.t('artist')}</MenuItem>,
+            <MenuItem key="1" eventKey="1">{i18n.t('technology')}</MenuItem>,
+            <MenuItem key="2" eventKey="2">{i18n.t('law')}</MenuItem>,
+            <MenuItem key="3" eventKey="3">{i18n.t('economy')}</MenuItem>,
+            <MenuItem key="4" eventKey="4">{i18n.t('education')}</MenuItem>,
+            <MenuItem key="5" eventKey="5">{i18n.t('artist')}</MenuItem>,
         ]};
     constructor (props) {
         super(props);
@@ -242,6 +242,7 @@ export default class Modal extends Component {
         return (
             <div>
                 <ReactModal
+                    ariaHideApp={false}
                     isOpen={this.props.showModal}
                     contentLabel="Minimal Modal Example"
                     // className="Modal"
