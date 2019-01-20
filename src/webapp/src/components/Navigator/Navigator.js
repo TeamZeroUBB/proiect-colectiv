@@ -22,6 +22,8 @@ class Navigator extends Component {
     };
 
     render() {
+        const user = JSON.parse(localStorage.getItem('user'));
+
         return (
             <div className="navi">
                 <div className="navi-left">
@@ -32,10 +34,10 @@ class Navigator extends Component {
                 </div>
 
                 <div className="navi-right">
-                    <Link to="/delete-user" className="navi-button navi-addpost">
+                    {user.isAdmin && <Link to="/delete-user" className="navi-button navi-addpost">
                         <FontAwesomeIcon className="fa-user-minus" icon={faUserMinus} />
-                        Delete user
-                    </Link>
+                        {i18n.t('deleteUserLabel')}
+                    </Link>}
                     <Link to="/login" className="navi-button navi-account">
                         <FontAwesomeIcon className="fa-fw" icon={faUser} />
 						{i18n.t('myAccountLabel')}
