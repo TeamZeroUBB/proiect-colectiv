@@ -27,11 +27,14 @@ export default class UserDetailsPage extends Component {
         }
 
         return (
-          <div className="card md-6 main-card">
-            <div className="card-body">
-              <h5 className="card-title">{user.username}</h5>
-              <h6 className="card-subtitle mb-2 text-muted">{user.lastName + ' ' + user.firstName}</h6>
-              <h6 className="card-subtitle mb-2 text-muted">{user.email}</h6>
+          <div className="jumbotron">
+            <div className="card md-6 main-card">
+              <div className="card-body">
+                <h5 className="card-title">{user.username}</h5>
+                <hr/>
+                <h6 className="card-subtitle mb-2 text-muted">{user.lastName + ' ' + user.firstName}</h6>
+                <h6 className="card-subtitle mb-2 text-muted">{user.email}</h6>
+              </div>
             </div>
           </div>
         );
