@@ -13,5 +13,6 @@
   "law": "Gesetz",
   "economy": "Wirtschaft",
   "education": "Bildung",
-  "artist": "Künstler"
+  "artist": "Künstler",
+  "deleteUserLabel": "Benutzer löschen"
 }

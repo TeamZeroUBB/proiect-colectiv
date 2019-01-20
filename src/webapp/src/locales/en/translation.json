@@ -13,7 +13,6 @@
   "law": "Law",
   "economy": "Economy",
   "education": "Education",
-  "artist": "Artist"
-
-
+  "artist": "Artist",
+  "deleteUserLabel": "Delete user"
 }
