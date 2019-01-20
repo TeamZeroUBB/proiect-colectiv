@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Input from '../../../components/common/Input/Input';
 import { Redirect } from 'react-router-dom';
+import i18n from '../../../i18n';
 
 class LogIn extends Component {
 	constructor(props) {
@@ -48,11 +49,11 @@ class LogIn extends Component {
 
 		return (
 			<div className="loginpage-tab">
-				<h1>Welcome back!</h1>
+				<h1>{i18n.t("welcomeBack")}</h1>
 				<div className="error-text error-text-color">{this.state.errorMessage}</div>
-				<Input inputType="input" labelName="Username" type="text" rules={{ required: true }} ref={this.username} />
-				<Input inputType="input" labelName="Password" type="password" rules={{ required: true }} ref={this.password} />
-				<button className="button" onClick={this.loginButtonClicked}>Log In</button>
+				<Input inputType="input" labelName={i18n.t("username")} type="text" rules={{ required: true }} ref={this.username} />
+				<Input inputType="input" labelName={i18n.t("password")} type="password" rules={{ required: true }} ref={this.password} />
+				<button className="button" onClick={this.loginButtonClicked}>{i18n.t("login")}</button>
 			</div>
 		);
 	}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router , Route, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import './App.css';
 
 import FrontPage from './pages/Front Page/FrontPage';
@@ -19,16 +19,16 @@ axios.defaults.baseURL = apiUrl;
 //allow cross-origin calls
 axios.defaults.headers.post['crossDomain'] = true;
 
-function App ({ t }) {
+function App({ t }) {
     return (
         <Router>
             <div className="App">
-                <Route exact path="/" render={() => <Redirect to="/jobs"/>}/>
-                <Route path="/login" component={LoginPage}/>
-                <Route path="/signupsuccess" component={RegisterSuccess}/>
-                <Route path="/jobs" component={JobsPage}/>
-                <Route path="/user/:userId" component={UserDetailsPage}/>
-                <Route path ="/delete-user" component={UserDeletePage}/>
+                <Route exact path="/" render={() => <Redirect to="/jobs" />} />
+                <Route path="/login" component={LoginPage} />
+                <Route path="/signupsuccess" component={RegisterSuccess} />
+                <Route path="/jobs" component={JobsPage} />
+                <Route path="/user/:userId" component={UserDetailsPage} />
+                <Route path="/delete-user" component={UserDeletePage} />
             </div>
         </Router>
     );

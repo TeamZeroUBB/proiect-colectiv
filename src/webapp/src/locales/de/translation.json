@@ -14,5 +14,39 @@
   "economy": "Wirtschaft",
   "education": "Bildung",
   "artist": "Künstler",
-  "deleteUserLabel": "Benutzer löschen"
+  "deleteUserLabel": "Benutzer löschen",
+  "welcomeBack": "Willkommen zurück!",
+  "signUpBackofficeMsg": "Melden Sie sich an und veröffentlichen Sie ein Stellenangebot!",
+  "signUpClientMsg": "Melde dich an und verdiene Geld!",
+  "loginTitle": "Einloggen",
+  "signupBackofficeTitle": "Sich als arbeitgeber anmelden",
+  "signupClientTitle": "Melden Sie sich als Kunde an",
+
+  "username": "Nutzername",
+  "password": "Passwort",
+  "repassword": "Wiederhole das Passwort",
+  "firstname": "Vorname",
+  "lastname": "Nachname",
+  "email": "E-mail",
+  "city": "Stadt",
+  "register": "Registrieren",
+  "login": "Einloggen",
+
+  "emailExists": "Entschuldigung, aber diese E-Mail ist bereits vergeben",
+  "incompleteError": "Bitte füllen Sie zuerst die erforderlichen Felder aus",
+
+  "regsucc_msg1":"Anmeldung abgeschlossen!",
+  "regsucc_msg2":"Willkommen im Ausland",
+  "regsucc_msg3":"Vielen Dank für Ihre Anmeldung. Wir hoffen, dass Sie unsere Community genießen werden!",
+  "regsucc_msg4":"Zurück zur Anmeldeseite, klicken",
+  "regsucc_msg5":"hier",
+
+  "input_requiredField": "Dieses Feld wird benötigt",
+  "input_longerThan": "Dieses Feld sollte länger sein als",
+  "input_shorterThan": "Dieses Feld sollte kürzer als sein",
+  "input_character": "briefe",
+  "input_shouldContain": "Dieses Feld sollte mindestens enthalten",
+  "input_upperCase": "großbuchstaben",
+  "input_lowerCase": "kleinbuchstaben",
+  "input_match": "Passwörter stimmen nicht überein"
 }

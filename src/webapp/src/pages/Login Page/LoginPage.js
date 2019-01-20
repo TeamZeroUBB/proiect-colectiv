@@ -3,6 +3,8 @@ import './LoginPage.css';
 import LogIn from './SubLogins/LogIn';
 import BackofficeRegister from './SubLogins/BackofficeRegister';
 import ClientRegister from './SubLogins/ClientRegister';
+import Navigator from '../../components/Navigator/Navigator';
+import i18n from '../../i18n';
 
 class LoginPage extends Component {
 	constructor(props) {
@@ -21,12 +23,14 @@ class LoginPage extends Component {
 
 	render() {
 		return (
+			<>
+			<Navigator />
 			<div className="loginpage">
 				<div className="loginpage-form">
 					<ul className="loginpage-tab-group">
-						<li className={`tab${this.state.activeWindow === 1 ? " active" : ""}`} onClick={this.onLoginIsActive}>Log In</li>
-						<li className={`tab${this.state.activeWindow === 2 ? " active" : ""}`} onClick={this.onRegisterBackofficeIsActive}>Sign Up Backoffice</li>
-						<li className={`tab${this.state.activeWindow === 3 ? " active" : ""}`} onClick={this.onRegisterClientIsActive}>Sign Up Client</li>
+						<li className={`tab${this.state.activeWindow === 1 ? " active" : ""}`} onClick={this.onLoginIsActive}>{i18n.t("loginTitle")}</li>
+						<li className={`tab${this.state.activeWindow === 2 ? " active" : ""}`} onClick={this.onRegisterBackofficeIsActive}>{i18n.t("signupBackofficeTitle")}</li>
+						<li className={`tab${this.state.activeWindow === 3 ? " active" : ""}`} onClick={this.onRegisterClientIsActive}>{i18n.t("signupClientTitle")}</li>
 					</ul>
 
 					<div className="loginpage-tab-content">
@@ -39,6 +43,7 @@ class LoginPage extends Component {
 					</div>
 				</div>
 			</div>
+			</>
 		);
 	}
 }

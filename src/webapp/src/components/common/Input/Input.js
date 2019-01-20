@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./Input.css";
+import i18n from '../../../i18n';
 
 //usage:
 //<Input inputType="input" labelName="Name" rules={required:true, minLength:3} type="text/password" etc. />
@@ -84,31 +85,31 @@ class Input extends Component {
 		if (rules.required) {
 			isValid = value.trim() !== '' && isValid;
 			if (!isValid)
-				message.push("This field is required");
+				message.push(i18n.t("input_requiredField"));
 		}
 
 		if (rules.minLength) {
 			isValid = value.length >= rules.minLength && isValid;
 			if (!isValid)
-				message.push(`This field should be longer than ${rules.minLength} characters`);
+				message.push(`${i18n.t("input_longerThan")} ${rules.minLength} ${i18n.t("input_character")}`);
 		}
 
 		if (rules.maxLength) {
 			isValid = value.length <= rules.maxLength && isValid;
 			if (!isValid)
-				message.push(`This field should be shorter than ${rules.maxLength} characters`);
+				message.push(`${i18n.t("input_shorterThan")} ${rules.maxLength} ${i18n.t("input_character")}`);
 		}
 
 		if (rules.minUpper) {
 			isValid = this.countUpper(value) >= rules.minUpper && isValid;
 			if (!isValid)
-				message.push(`This field should contain at least ${rules.minUpper} upper case characters`);
+				message.push(`${i18n.t("input_shouldContain")} ${rules.minUpper} ${i18n.t("input_upperCase")}`);
 		}
 
 		if (rules.minLower) {
 			isValid = this.countLower(value) >= rules.minLower && isValid;
 			if (!isValid)
-				message.push(`This field should contain at least ${rules.minLength} lower case characters`);
+				message.push(`${i18n.t("input_shouldContain")} ${rules.minLength} ${i18n.t("input_lowerCase")}`);
 		}
 
 		if (rules.shouldMatch) {
