@@ -34,7 +34,7 @@ class Navigator extends Component {
                 </div>
 
                 <div className="navi-right">
-                    {user.isAdmin && <Link to="/delete-user" className="navi-button navi-addpost">
+                    {user && user.isAdmin && <Link to="/delete-user" className="navi-button navi-addpost">
                         <FontAwesomeIcon className="fa-user-minus" icon={faUserMinus} />
                         {i18n.t('deleteUserLabel')}
                     </Link>}
