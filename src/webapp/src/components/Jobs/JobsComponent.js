@@ -58,7 +58,7 @@ export default class JobsComponent extends Component {
 	render() {
 		const job = this.props.job;
 		const user = JSON.parse(localStorage.getItem('user'));
-		console.log(user);
+
 		return (
 			<div id="jobOfferContainer">
 				{	user.id == job.userId &&
